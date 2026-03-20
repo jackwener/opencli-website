@@ -23,8 +23,8 @@
   --gradient-subtle: linear-gradient(135deg, rgba(0,229,160,0.08) 0%, rgba(0,180,216,0.04) 100%);
 
   /* Typography */
-  --font-display: 'Syne', sans-serif;
-  --font-body: 'Instrument Sans', system-ui, sans-serif;
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   /* Spacing scale */
