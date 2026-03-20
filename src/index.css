@@ -56,11 +56,12 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-primary);
 }
 
 body {
   font-family: var(--font-body);
-  background: var(--bg-primary);
+  background: transparent;
   color: var(--text-primary);
   line-height: 1.7;
   overflow-x: hidden;
@@ -431,6 +432,10 @@ button {
   color: var(--text-secondary);
   padding-left: 1.2rem;
 }
+/* ─── Main Content Wrapper ─── */
+.main-content {
+  position: relative;
+}
 
 /* ─── Features ─── */
 .features {
@@ -456,7 +461,9 @@ button {
 .feature-card {
   position: relative;
   padding: 2rem;
-  background: var(--bg-secondary);
+  background: rgba(18, 18, 26, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   transition: all 0.4s var(--ease-out-expo);
@@ -530,7 +537,9 @@ button {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: var(--bg-secondary);
+  background: rgba(18, 18, 26, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .platforms-table {
@@ -674,7 +683,7 @@ button {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: var(--bg-secondary);
+  background: rgba(18, 18, 26, 0.8);
   border: 2px solid var(--border-accent);
   display: flex;
   align-items: center;
@@ -723,7 +732,9 @@ button {
   position: relative;
   text-align: center;
   padding: var(--space-xl) var(--space-lg);
-  background: var(--bg-secondary);
+  background: rgba(18, 18, 26, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   overflow: hidden;
@@ -800,6 +811,8 @@ button {
 .footer {
   padding: var(--space-lg) 0;
   border-top: 1px solid var(--border);
+  background: rgba(10, 10, 15, 0.85);
+  position: relative;
 }
 
 .footer-inner {

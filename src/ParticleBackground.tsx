@@ -256,7 +256,7 @@ export default function ParticleBackground() {
   return (
     <div
       style={{
-        position: 'absolute',
+        position: 'fixed',
         inset: 0,
         zIndex: 0,
         pointerEvents: 'none',

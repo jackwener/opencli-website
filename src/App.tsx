@@ -105,7 +105,6 @@ function Nav() {
 function Hero() {
   return (
     <section className="hero" id="hero">
-      <ParticleBackground />
       <div className="hero-glow" />
       <div className="hero-content">
         <div className="hero-badge">
@@ -422,14 +421,17 @@ function Footer() {
 export default function App() {
   return (
     <>
+      <ParticleBackground />
       <div className="noise-overlay" />
       <Nav />
       <Hero />
-      <Features />
-      <Platforms />
-      <HowItWorks />
-      <CTA />
-      <Footer />
+      <div className="main-content">
+        <Features />
+        <Platforms />
+        <HowItWorks />
+        <CTA />
+        <Footer />
+      </div>
     </>
   )
 }
