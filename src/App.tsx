@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import ParticleBackground from './ParticleBackground'
 
 /* ─── Platform Data ─── */
 const PLATFORMS = [
@@ -104,7 +105,7 @@ function Nav() {
 function Hero() {
   return (
     <section className="hero" id="hero">
-      <div className="hero-bg-grid" />
+      <ParticleBackground />
       <div className="hero-glow" />
       <div className="hero-content">
         <div className="hero-badge">

@@ -225,17 +225,6 @@ button {
   overflow: hidden;
 }
 
-.hero-bg-grid {
-  position: absolute;
-  inset: 0;
-  background-image: 
-    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 60px 60px;
-  mask-image: radial-gradient(ellipse 60% 50% at 50% 40%, black 20%, transparent 70%);
-  -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 40%, black 20%, transparent 70%);
-}
-
 .hero-glow {
   position: absolute;
   top: -20%;
@@ -245,6 +234,7 @@ button {
   height: 600px;
   background: radial-gradient(ellipse, var(--accent-glow) 0%, transparent 70%);
   pointer-events: none;
+  z-index: 1;
   animation: pulse-glow 6s ease-in-out infinite alternate;
 }
 
