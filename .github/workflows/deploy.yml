@@ -1,9 +1,10 @@
-# Deploy to GitHub Pages using Vite
-name: Deploy to GitHub Pages
+name: Deploy Site
 
 on:
   push:
     branches: [master, main]
+  repository_dispatch:
+    types: [docs-updated]
   workflow_dispatch:
 
 permissions:
@@ -12,33 +13,55 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout website
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
 
-      - name: Install dependencies
+      # ── Build website ──
+      - name: Install website dependencies
         run: npm ci
 
-      - name: Build
+      - name: Build website
         run: npm run build
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+      # ── Build docs (from opencli repo) ──
+      - name: Checkout opencli repo
+        uses: actions/checkout@v4
+        with:
+          repository: jackwener/opencli
+          path: _opencli
+          sparse-checkout: |
+            docs
+            package.json
+            package-lock.json
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Install docs dependencies
+        working-directory: _opencli
+        run: npm ci
+
+      - name: Build VitePress docs
+        working-directory: _opencli
+        run: npx vitepress build docs
+
+      # ── Merge outputs ──
+      - name: Merge website + docs into dist/
+        run: cp -r _opencli/docs/.vitepress/dist dist/docs
+
+      # ── Deploy ──
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 

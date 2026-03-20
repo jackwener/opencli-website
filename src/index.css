@@ -461,7 +461,7 @@ button {
 .feature-card {
   position: relative;
   padding: 2rem;
-  background: rgba(18, 18, 26, 0.75);
+  background: rgba(18, 18, 26, 0.55);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--border);
@@ -537,7 +537,7 @@ button {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: rgba(18, 18, 26, 0.75);
+  background: rgba(18, 18, 26, 0.55);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
@@ -732,7 +732,7 @@ button {
   position: relative;
   text-align: center;
   padding: var(--space-xl) var(--space-lg);
-  background: rgba(18, 18, 26, 0.75);
+  background: rgba(18, 18, 26, 0.55);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--border);

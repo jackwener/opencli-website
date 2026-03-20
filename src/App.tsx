@@ -84,7 +84,7 @@ function Nav() {
           <li><a href="#features">Features</a></li>
           <li><a href="#platforms">Platforms</a></li>
           <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="https://opencli.info" target="_blank" rel="noopener">Docs</a></li>
+          <li><a href="/docs/">Docs</a></li>
         </ul>
         <a
           href="https://github.com/jackwener/opencli"
@@ -408,7 +408,7 @@ function Footer() {
           <span>Apache-2.0 License</span>
         </div>
         <ul className="footer-links">
-          <li><a href="https://opencli.info" target="_blank" rel="noopener">Documentation</a></li>
+          <li><a href="/docs/">Documentation</a></li>
           <li><a href="https://github.com/jackwener/opencli" target="_blank" rel="noopener">GitHub</a></li>
           <li><a href="https://www.npmjs.com/package/@jackwener/opencli" target="_blank" rel="noopener">npm</a></li>
         </ul>
