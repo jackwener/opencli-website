@@ -4,7 +4,7 @@ on:
   push:
     branches: [master, main]
   repository_dispatch:
-    types: [docs-updated]
+    types: [docs-updated, version-released]
   workflow_dispatch:
 
 permissions:
@@ -28,14 +28,7 @@ jobs:
           node-version: 20
           cache: npm
 
-      # ── Build website ──
-      - name: Install website dependencies
-        run: npm ci
-
-      - name: Build website
-        run: npm run build
-
-      # ── Build docs (from opencli repo) ──
+      # ── Checkout opencli repo (needed for version + docs) ──
       - name: Checkout opencli repo
         uses: actions/checkout@v4
         with:
@@ -46,6 +39,22 @@ jobs:
             package.json
             package-lock.json
 
+      - name: Extract opencli version
+        id: version
+        run: |
+          VERSION=$(node -p "require('./_opencli/package.json').version")
+          echo "OPENCLI_VERSION=$VERSION" >> "$GITHUB_OUTPUT"
+
+      # ── Build website ──
+      - name: Install website dependencies
+        run: npm ci
+
+      - name: Build website
+        run: npm run build
+        env:
+          VITE_OPENCLI_VERSION: ${{ steps.version.outputs.OPENCLI_VERSION }}
+
+      # ── Build docs ──
       - name: Install docs dependencies
         working-directory: _opencli
         run: npm ci
@@ -64,6 +73,7 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
+
 
   deploy:
     environment:
