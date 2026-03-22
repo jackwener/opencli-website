@@ -109,7 +109,7 @@ function Hero() {
       <div className="hero-content">
         <div className="hero-badge">
           <span className="hero-badge-dot" />
-          v1.0 — Now with Desktop App Support
+          v{import.meta.env.VITE_OPENCLI_VERSION || '1.0'} — Now with Desktop App Support
         </div>
         <h1>
           Make Any Website
