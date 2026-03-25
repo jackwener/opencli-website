@@ -119,6 +119,21 @@ const FEATURES = [
     title: 'Dynamic Loader',
     desc: 'Drop .ts or .yaml adapters into the clis/ folder — auto-registered, zero config. Extend in seconds.',
   },
+  {
+    icon: '🧩',
+    title: 'Plugin System',
+    desc: 'Install, manage, and publish plugins with integrity validation. Extend OpenCLI with community-built adapters.',
+  },
+  {
+    icon: '🎬',
+    title: 'Record & Replay',
+    desc: 'Record browser sessions and replay them as CLI commands. Perfect for debugging and creating new adapters.',
+  },
+  {
+    icon: '🪝',
+    title: 'Lifecycle Hooks',
+    desc: 'Hook into command execution with pre/post events. Build audit logs, diff tracking, or Slack notifications.',
+  },
 ]
 
 /* ─── Intersection Observer Hook ─── */
