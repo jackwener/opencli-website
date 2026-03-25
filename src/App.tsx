@@ -144,6 +144,9 @@ function useFadeIn() {
 
 /* ─── Components ─── */
 function Nav() {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const closeMenu = () => setMenuOpen(false)
+
   return (
     <nav className="nav" id="nav">
       <div className="container nav-inner">
@@ -151,11 +154,11 @@ function Nav() {
           <span className="nav-logo-icon">&gt;_</span>
           OpenCLI
         </a>
-        <ul className="nav-links">
-          <li><a href="#features">Features</a></li>
-          <li><a href="#platforms">Platforms</a></li>
-          <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="/docs/">Docs</a></li>
+        <ul className={`nav-links${menuOpen ? ' open' : ''}`}>
+          <li><a href="#features" onClick={closeMenu}>Features</a></li>
+          <li><a href="#platforms" onClick={closeMenu}>Platforms</a></li>
+          <li><a href="#how-it-works" onClick={closeMenu}>How It Works</a></li>
+          <li><a href="/docs/" onClick={closeMenu}>Docs</a></li>
         </ul>
         <a
           href="https://github.com/jackwener/opencli"
@@ -168,6 +171,15 @@ function Nav() {
           </svg>
           GitHub
         </a>
+        <button
+          className={`nav-hamburger${menuOpen ? ' open' : ''}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
       </div>
     </nav>
   )
@@ -493,7 +505,7 @@ function Footer() {
     <footer className="footer">
       <div className="container footer-inner">
         <div className="footer-left">
-          <span>© 2025 OpenCLI</span>
+          <span>© 2025-2026 OpenCLI</span>
           <span>·</span>
           <span>Apache-2.0 License</span>
         </div>
