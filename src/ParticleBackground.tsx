@@ -253,6 +253,21 @@ function CameraRig() {
 
 /* ─── Main Export ─── */
 export default function ParticleBackground() {
+  /* Skip WebGL on reduced-motion preference */
+  if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return (
+      <div
+        style={{
+          position: 'fixed',
+          inset: 0,
+          zIndex: 0,
+          background: '#0a0a0f',
+          pointerEvents: 'none',
+        }}
+      />
+    )
+  }
+
   return (
     <div
       style={{
