@@ -303,6 +303,35 @@ function HowItWorks() {
   )
 }
 
+function StepCard({ num, title, desc, code, delay }: { num: string; title: string; desc: string; code: string | null; delay: number }) {
+  const ref = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.style.transitionDelay = `${delay}s`
+          el.classList.add('visible')
+          observer.unobserve(el)
+        }
+      },
+      { threshold: 0.2 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [delay])
+
+  return (
+    <div className="step fade-in" ref={ref}>
+      <div className="step-number">{num}</div>
+      <h3>{title}</h3>
+      <p>{desc}</p>
+      {code && <span className="step-code">{code}</span>}
+    </div>
+  )
+}
+
 function Steps() {
   const steps = [
     {
@@ -333,34 +362,9 @@ function Steps() {
 
   return (
     <div className="steps">
-      {steps.map((s, i) => {
-        const ref = useRef<HTMLDivElement>(null)
-        useEffect(() => {
-          const el = ref.current
-          if (!el) return
-          const observer = new IntersectionObserver(
-            ([entry]) => {
-              if (entry.isIntersecting) {
-                el.style.transitionDelay = `${i * 0.12}s`
-                el.classList.add('visible')
-                observer.unobserve(el)
-              }
-            },
-            { threshold: 0.2 }
-          )
-          observer.observe(el)
-          return () => observer.disconnect()
-        }, [])
-
-        return (
-          <div className="step fade-in" key={s.num} ref={ref}>
-            <div className="step-number">{s.num}</div>
-            <h3>{s.title}</h3>
-            <p>{s.desc}</p>
-            {s.code && <span className="step-code">{s.code}</span>}
-          </div>
-        )
-      })}
+      {steps.map((s, i) => (
+        <StepCard key={s.num} {...s} delay={i * 0.12} />
+      ))}
     </div>
   )
 }

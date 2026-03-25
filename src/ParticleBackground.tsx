@@ -1,4 +1,4 @@
-import { useRef, useMemo, useCallback } from 'react'
+import { useRef, useMemo, useEffect, useCallback } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 
@@ -235,7 +235,7 @@ function CameraRig() {
   }, [])
 
   // Attach listener once
-  useMemo(() => {
+  useEffect(() => {
     window.addEventListener('mousemove', onMouseMove)
     return () => window.removeEventListener('mousemove', onMouseMove)
   }, [onMouseMove])
