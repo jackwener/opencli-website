@@ -568,12 +568,27 @@ button {
 }
 
 .platforms-table-wrap {
+  position: relative;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: rgba(18, 18, 26, 0.55);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+}
+
+.platforms-table-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(transparent, var(--bg-elevated));
+  pointer-events: none;
+  z-index: 10;
+  border-bottom-left-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
 }
 
 .platform-filters {
@@ -626,6 +641,28 @@ button {
   opacity: 0.7;
 }
 
+.platforms-table-scroll {
+  max-height: 480px;
+  overflow-y: auto;
+  position: relative;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.platforms-table-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.platforms-table-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.platforms-table-scroll::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+.platforms-table-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
 .platforms-table {
   width: 100%;
   border-collapse: collapse;
@@ -637,6 +674,10 @@ button {
 }
 
 .platforms-table th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg-elevated);
   padding: 1rem 1.5rem;
   text-align: left;
   font-family: var(--font-mono);

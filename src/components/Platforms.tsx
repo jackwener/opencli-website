@@ -21,34 +21,36 @@ function PlatformsTable() {
           </button>
         ))}
       </div>
-      <table className="platforms-table">
-        <thead>
-          <tr>
-            <th>Platform</th>
-            <th>Mode</th>
-            <th>Available Commands</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filtered.map((p) => (
-            <tr key={p.name}>
-              <td>
-                <span className="platform-name">{p.name}</span>
-              </td>
-              <td>
-                <span className={`platform-mode mode-${p.mode}`}>{p.mode}</span>
-              </td>
-              <td>
-                <div className="platform-commands">
-                  {p.commands.map((c) => (
-                    <span key={c} className="cmd-tag">{c}</span>
-                  ))}
-                </div>
-              </td>
+      <div className="platforms-table-scroll">
+        <table className="platforms-table">
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>Mode</th>
+              <th>Available Commands</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {filtered.map((p) => (
+              <tr key={p.name}>
+                <td>
+                  <span className="platform-name">{p.name}</span>
+                </td>
+                <td>
+                  <span className={`platform-mode mode-${p.mode}`}>{p.mode}</span>
+                </td>
+                <td>
+                  <div className="platform-commands">
+                    {p.commands.map((c) => (
+                      <span key={c} className="cmd-tag">{c}</span>
+                    ))}
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   )
 }
