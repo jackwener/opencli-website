@@ -1028,3 +1028,23 @@ button {
     flex-direction: column;
   }
 }
+
+/* ─── Reduced Motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .fade-in {
+    opacity: 1;
+    transform: none;
+  }
+  .hero-glow {
+    animation: none;
+    opacity: 0.8;
+  }
+  .hero-badge-dot {
+    animation: none;
+  }
+}
