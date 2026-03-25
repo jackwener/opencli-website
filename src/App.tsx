@@ -1,21 +1,92 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import ParticleBackground from './ParticleBackground'
 
 /* ─── Platform Data ─── */
-const PLATFORMS = [
-  { name: 'Twitter / X', mode: 'browser', commands: ['trending', 'bookmarks', 'profile', 'search', 'timeline', 'post', 'reply', 'download'] },
-  { name: 'Cursor', mode: 'desktop', commands: ['status', 'send', 'read', 'new', 'composer', 'model', 'ask', 'screenshot'] },
-  { name: 'Bilibili', mode: 'browser', commands: ['hot', 'search', 'me', 'favorite', 'history', 'feed', 'subtitle', 'download'] },
-  { name: 'Reddit', mode: 'browser', commands: ['hot', 'frontpage', 'popular', 'search', 'subreddit', 'read', 'comment', 'save'] },
-  { name: 'Codex', mode: 'desktop', commands: ['status', 'send', 'read', 'new', 'extract-diff', 'model', 'ask', 'history'] },
-  { name: 'Notion', mode: 'desktop', commands: ['status', 'search', 'read', 'new', 'write', 'sidebar', 'favorites', 'export'] },
-  { name: 'YouTube', mode: 'browser', commands: ['search', 'video', 'transcript'] },
-  { name: '小红书', mode: 'browser', commands: ['search', 'notifications', 'feed', 'me', 'user', 'download'] },
-  { name: 'ChatGPT', mode: 'desktop', commands: ['status', 'new', 'send', 'read', 'ask'] },
-  { name: 'Discord', mode: 'desktop', commands: ['status', 'send', 'read', 'channels', 'servers', 'search'] },
-  { name: 'GitHub', mode: 'public', commands: ['search'] },
-  { name: 'Hacker News', mode: 'public', commands: ['top'] },
+type Category = 'all' | 'social' | 'chinese' | 'dev' | 'ai' | 'finance' | 'desktop' | 'utility'
+
+const PLATFORMS: { name: string; mode: string; category: Category[]; commands: string[] }[] = [
+  // Social & Media
+  { name: 'Twitter / X', mode: 'browser', category: ['social'], commands: ['trending', 'timeline', 'bookmarks', 'search', 'profile', 'post', 'reply', 'like', 'follow', 'download'] },
+  { name: 'Reddit', mode: 'browser', category: ['social'], commands: ['hot', 'frontpage', 'popular', 'search', 'subreddit', 'read', 'comment', 'save', 'upvote'] },
+  { name: 'Instagram', mode: 'browser', category: ['social'], commands: ['explore', 'search', 'profile', 'follow', 'like', 'comment', 'save', 'user'] },
+  { name: 'Facebook', mode: 'browser', category: ['social'], commands: ['feed', 'search', 'profile', 'friends', 'groups', 'events', 'notifications'] },
+  { name: 'TikTok', mode: 'browser', category: ['social'], commands: ['explore', 'search', 'profile', 'follow', 'like', 'comment', 'save', 'user'] },
+  { name: 'LinkedIn', mode: 'browser', category: ['social'], commands: ['search', 'timeline'] },
+  { name: 'YouTube', mode: 'browser', category: ['social'], commands: ['search', 'video', 'transcript'] },
+  { name: 'Discord', mode: 'desktop', category: ['social', 'desktop'], commands: ['status', 'send', 'read', 'channels', 'servers', 'search', 'members'] },
+  { name: 'Pixiv', mode: 'browser', category: ['social'], commands: ['ranking', 'search', 'detail', 'download', 'user'] },
+  { name: 'Steam', mode: 'browser', category: ['social'], commands: ['top-sellers'] },
+
+  // Chinese Social & Content
+  { name: 'Bilibili', mode: 'browser', category: ['chinese'], commands: ['hot', 'ranking', 'search', 'feed', 'favorite', 'history', 'subtitle', 'download'] },
+  { name: '小红书', mode: 'browser', category: ['chinese'], commands: ['search', 'feed', 'user', 'notifications', 'download', 'publish'] },
+  { name: '微博', mode: 'browser', category: ['chinese'], commands: ['hot', 'search'] },
+  { name: '知乎', mode: 'browser', category: ['chinese'], commands: ['hot', 'search', 'question', 'download'] },
+  { name: '豆瓣', mode: 'browser', category: ['chinese'], commands: ['movie-hot', 'book-hot', 'top250', 'search', 'subject', 'reviews'] },
+  { name: 'V2EX', mode: 'browser', category: ['chinese'], commands: ['hot', 'latest', 'daily', 'topic', 'node', 'me'] },
+  { name: '即刻', mode: 'browser', category: ['chinese'], commands: ['feed', 'search', 'topic', 'post', 'comment', 'like', 'user'] },
+  { name: 'Linux.do', mode: 'browser', category: ['chinese'], commands: ['hot', 'latest', 'search', 'category', 'topic'] },
+  { name: 'BOSS直聘', mode: 'browser', category: ['chinese'], commands: ['search', 'recommend', 'joblist', 'chatlist', 'greet'] },
+  { name: '微信读书', mode: 'browser', category: ['chinese'], commands: ['search', 'shelf', 'ranking', 'book', 'notes', 'highlights'] },
+  { name: '小宇宙', mode: 'browser', category: ['chinese'], commands: ['episode', 'podcast', 'podcast-episodes'] },
+  { name: '超星', mode: 'browser', category: ['chinese'], commands: ['assignments', 'exams'] },
+  { name: '什么值得买', mode: 'browser', category: ['chinese'], commands: ['search'] },
+  { name: '携程', mode: 'browser', category: ['chinese'], commands: ['search'] },
+  { name: '京东', mode: 'browser', category: ['chinese'], commands: ['item'] },
+  { name: 'Coupang', mode: 'browser', category: ['chinese'], commands: ['search', 'add-to-cart'] },
+
+  // Developer & News
+  { name: 'Hacker News', mode: 'public', category: ['dev'], commands: ['top', 'best', 'new', 'ask', 'show', 'jobs', 'search', 'user'] },
+  { name: 'GitHub', mode: 'public', category: ['dev'], commands: ['search'] },
+  { name: 'StackOverflow', mode: 'browser', category: ['dev'], commands: ['hot', 'search', 'bounties', 'unanswered'] },
+  { name: 'Dev.to', mode: 'browser', category: ['dev'], commands: ['top', 'tag', 'user'] },
+  { name: 'Lobsters', mode: 'public', category: ['dev'], commands: ['hot', 'active', 'newest', 'tag'] },
+  { name: 'Medium', mode: 'browser', category: ['dev'], commands: ['feed', 'search', 'user'] },
+  { name: 'Substack', mode: 'browser', category: ['dev'], commands: ['feed', 'search', 'publication'] },
+  { name: 'ArXiv', mode: 'public', category: ['dev'], commands: ['search', 'paper'] },
+  { name: 'HuggingFace', mode: 'public', category: ['dev'], commands: ['top'] },
+  { name: 'Wikipedia', mode: 'public', category: ['dev'], commands: ['search', 'summary', 'random', 'trending'] },
+
+  // AI & Desktop Apps
+  { name: 'Cursor', mode: 'desktop', category: ['ai', 'desktop'], commands: ['status', 'send', 'read', 'new', 'composer', 'model', 'ask', 'screenshot'] },
+  { name: 'Codex', mode: 'desktop', category: ['ai', 'desktop'], commands: ['status', 'send', 'read', 'new', 'extract-diff', 'model', 'ask', 'history'] },
+  { name: 'ChatGPT', mode: 'desktop', category: ['ai', 'desktop'], commands: ['status', 'new', 'send', 'read', 'ask'] },
+  { name: 'Notion', mode: 'desktop', category: ['ai', 'desktop'], commands: ['status', 'search', 'read', 'new', 'write', 'sidebar', 'favorites', 'export'] },
+  { name: 'Grok', mode: 'browser', category: ['ai'], commands: ['ask'] },
+  { name: '豆包', mode: 'browser', category: ['ai', 'chinese'], commands: ['ask', 'new', 'read', 'send', 'status'] },
+  { name: '豆包 App', mode: 'desktop', category: ['ai', 'desktop', 'chinese'], commands: ['ask', 'new', 'read', 'send', 'screenshot', 'status'] },
+  { name: 'ChatWise', mode: 'desktop', category: ['ai', 'desktop'], commands: ['ask', 'send', 'read', 'new', 'model', 'history', 'export', 'status'] },
+  { name: '即梦', mode: 'browser', category: ['ai', 'chinese'], commands: ['generate', 'history'] },
+  { name: 'Yollomi', mode: 'browser', category: ['ai'], commands: ['generate', 'face-swap', 'remove-bg', 'restore', 'upscale', 'try-on'] },
+
+  // Finance & News
+  { name: 'Bloomberg', mode: 'browser', category: ['finance'], commands: ['main', 'markets', 'economics', 'tech', 'politics', 'news'] },
+  { name: '雪球', mode: 'browser', category: ['finance', 'chinese'], commands: ['hot', 'hot-stock', 'stock', 'search', 'feed', 'watchlist', 'earnings-date'] },
+  { name: 'Yahoo Finance', mode: 'browser', category: ['finance'], commands: ['quote'] },
+  { name: '新浪财经', mode: 'browser', category: ['finance', 'chinese'], commands: ['news'] },
+  { name: 'Barchart', mode: 'browser', category: ['finance'], commands: ['quote', 'options', 'greeks', 'flow'] },
+  { name: 'BBC', mode: 'public', category: ['finance'], commands: ['news'] },
+  { name: 'Reuters', mode: 'browser', category: ['finance'], commands: ['search'] },
+  { name: 'Google', mode: 'browser', category: ['utility'], commands: ['search', 'news', 'suggest', 'trends'] },
+
+  // Utilities
+  { name: 'Apple Podcasts', mode: 'browser', category: ['utility'], commands: ['search', 'top', 'episodes'] },
+  { name: 'Dictionary', mode: 'public', category: ['utility'], commands: ['search', 'synonyms', 'examples'] },
+  { name: '新浪博客', mode: 'browser', category: ['chinese'], commands: ['hot', 'search', 'article', 'user'] },
+  { name: '微信', mode: 'browser', category: ['chinese'], commands: ['download'] },
 ]
+
+const CATEGORY_LABELS: Record<Category, string> = {
+  all: 'All',
+  social: 'Social',
+  chinese: '中文平台',
+  dev: 'Dev & News',
+  ai: 'AI & Desktop',
+  finance: 'Finance',
+  desktop: 'Desktop Apps',
+  utility: 'Utilities',
+}
+const FILTER_CATEGORIES: Category[] = ['all', 'social', 'chinese', 'dev', 'ai', 'finance', 'utility']
 
 const FEATURES = [
   {
@@ -238,7 +309,7 @@ function Platforms() {
       <div className="container">
         <div className="platforms-header fade-in" ref={ref}>
           <span className="section-label">Integrations</span>
-          <h2 className="section-title">30+ platforms,<br />one interface</h2>
+          <h2 className="section-title">{PLATFORMS.length} platforms,<br />one interface</h2>
           <p className="section-desc">
             Browser APIs, desktop apps, and public feeds — all accessible through clean CLI commands.
           </p>
@@ -251,8 +322,23 @@ function Platforms() {
 
 function PlatformsTable() {
   const ref = useFadeIn()
+  const [active, setActive] = useState<Category>('all')
+  const filtered = active === 'all' ? PLATFORMS : PLATFORMS.filter(p => p.category.includes(active))
+
   return (
     <div className="platforms-table-wrap fade-in" ref={ref}>
+      <div className="platform-filters">
+        {FILTER_CATEGORIES.map(c => (
+          <button
+            key={c}
+            className={`platform-filter-btn${active === c ? ' active' : ''}`}
+            onClick={() => setActive(c)}
+          >
+            {CATEGORY_LABELS[c]}
+            {c !== 'all' && <span className="filter-count">{PLATFORMS.filter(p => p.category.includes(c)).length}</span>}
+          </button>
+        ))}
+      </div>
       <table className="platforms-table">
         <thead>
           <tr>
@@ -262,7 +348,7 @@ function PlatformsTable() {
           </tr>
         </thead>
         <tbody>
-          {PLATFORMS.map((p) => (
+          {filtered.map((p) => (
             <tr key={p.name}>
               <td>
                 <span className="platform-name">{p.name}</span>
