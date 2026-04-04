@@ -263,7 +263,7 @@ export function PluginsPage() {
             <h3>Have a plugin?</h3>
             <p>Submit your OpenCLI plugin to the ecosystem — just open a PR.</p>
             <a
-              href="https://github.com/jackwener/opencli-website/blob/main/CONTRIBUTING_PLUGINS.md"
+              href="https://github.com/jackwener/opencli-website/blob/master/CONTRIBUTING_PLUGINS.md"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"
