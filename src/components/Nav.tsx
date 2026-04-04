@@ -1,20 +1,30 @@
 import { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 
 export function Nav() {
   const [menuOpen, setMenuOpen] = useState(false)
   const closeMenu = () => setMenuOpen(false)
+  const location = useLocation()
+  const isHome = location.pathname === '/'
 
   return (
     <nav className="nav" id="nav">
       <div className="container nav-inner">
-        <a href="#" className="nav-logo">
+        <Link to="/" className="nav-logo">
           <span className="nav-logo-icon">&gt;_</span>
           OpenCLI
-        </a>
+        </Link>
         <ul className={`nav-links${menuOpen ? ' open' : ''}`}>
-          <li><a href="#features" onClick={closeMenu}>Features</a></li>
-          <li><a href="#platforms" onClick={closeMenu}>Platforms</a></li>
-          <li><a href="#how-it-works" onClick={closeMenu}>How It Works</a></li>
+          {isHome ? (
+            <>
+              <li><a href="#features" onClick={closeMenu}>Features</a></li>
+              <li><a href="#platforms" onClick={closeMenu}>Platforms</a></li>
+              <li><a href="#how-it-works" onClick={closeMenu}>How It Works</a></li>
+            </>
+          ) : (
+            <li><Link to="/" onClick={closeMenu}>Home</Link></li>
+          )}
+          <li><Link to="/plugins" onClick={closeMenu} className={location.pathname.startsWith('/plugins') ? 'nav-link-active' : ''}>Plugins</Link></li>
           <li><a href="/docs/" onClick={closeMenu}>Docs</a></li>
         </ul>
         <a
