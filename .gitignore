@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Generated at build time
+src/data/plugins-enriched.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

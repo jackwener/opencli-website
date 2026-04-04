@@ -1,0 +1,50 @@
+[
+  {
+    "name": "opencli-plugin-github-trending",
+    "slug": "github-trending",
+    "description": "GitHub Trending repositories",
+    "author": "ByteYue",
+    "repo": "ByteYue/opencli-plugin-github-trending",
+    "type": "YAML",
+    "category": "dev",
+    "commands": ["trending"],
+    "tags": ["github", "trending", "repositories"],
+    "installCommand": "opencli plugin install github:ByteYue/opencli-plugin-github-trending"
+  },
+  {
+    "name": "opencli-plugin-hot-digest",
+    "slug": "hot-digest",
+    "description": "Multi-platform trending aggregator",
+    "author": "ByteYue",
+    "repo": "ByteYue/opencli-plugin-hot-digest",
+    "type": "TS",
+    "category": "utility",
+    "commands": ["digest"],
+    "tags": ["trending", "aggregator", "multi-platform", "hot"],
+    "installCommand": "opencli plugin install github:ByteYue/opencli-plugin-hot-digest"
+  },
+  {
+    "name": "opencli-plugin-juejin",
+    "slug": "juejin",
+    "description": "稀土掘金 (Juejin) hot articles",
+    "author": "Astro-Han",
+    "repo": "Astro-Han/opencli-plugin-juejin",
+    "type": "YAML",
+    "category": "chinese",
+    "commands": ["hot", "search"],
+    "tags": ["juejin", "掘金", "chinese", "articles"],
+    "installCommand": "opencli plugin install github:Astro-Han/opencli-plugin-juejin"
+  },
+  {
+    "name": "opencli-plugin-vk",
+    "slug": "vk",
+    "description": "VK (VKontakte) wall, feed, and search",
+    "author": "flobo3",
+    "repo": "flobo3/opencli-plugin-vk",
+    "type": "TS",
+    "category": "social",
+    "commands": ["wall", "feed", "search"],
+    "tags": ["vk", "vkontakte", "social", "russia"],
+    "installCommand": "opencli plugin install github:flobo3/opencli-plugin-vk"
+  }
+]
