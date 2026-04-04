@@ -196,6 +196,10 @@ button {
   color: var(--text-primary);
 }
 
+.nav-links a.nav-link-active {
+  color: var(--accent);
+}
+
 .nav-cta {
   display: inline-flex;
   align-items: center;
