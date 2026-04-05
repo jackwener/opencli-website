@@ -18,7 +18,7 @@ export const blogPosts: BlogPost[] = [
       zh: '当我们谈论 Emacs 时，我们谈论的不是一个编辑器，而是一个可编程的环境。OpenCLI 正在为 AI Agent 做同样的事。',
       en: "When we talk about Emacs, we're not talking about an editor — we're talking about a programmable environment. OpenCLI is doing the same thing for AI agents.",
     },
-    date: '2025-07-05',
+    date: '2026-04-05',
     author: 'OpenCLI Team',
     tags: ['design-philosophy', 'emacs', 'ai-agent'],
   },
