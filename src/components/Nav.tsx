@@ -25,6 +25,7 @@ export function Nav() {
             <li><Link to="/" onClick={closeMenu}>Home</Link></li>
           )}
           <li><Link to="/plugins" onClick={closeMenu} className={location.pathname.startsWith('/plugins') ? 'nav-link-active' : ''}>Plugins</Link></li>
+          <li><Link to="/blog" onClick={closeMenu} className={location.pathname.startsWith('/blog') ? 'nav-link-active' : ''}>Blog</Link></li>
           <li><a href="/docs/" onClick={closeMenu}>Docs</a></li>
         </ul>
         <a
