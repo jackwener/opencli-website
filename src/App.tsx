@@ -8,6 +8,8 @@ import { HowItWorks } from './components/HowItWorks'
 import { CTA, Footer } from './components/CTA'
 import { PluginsPage } from './pages/PluginsPage'
 import { PluginDetailPage } from './pages/PluginDetailPage'
+import { BlogPage } from './pages/BlogPage'
+import { BlogPostPage } from './pages/BlogPostPage'
 
 function HomePage() {
   return (
@@ -34,6 +36,8 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/plugins" element={<PluginsPage />} />
         <Route path="/plugins/:slug" element={<PluginDetailPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<BlogPostPage />} />
       </Routes>
     </>
   )
