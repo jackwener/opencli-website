@@ -1,0 +1,45 @@
+# OpenCLI — opencli.info
+
+# Allow AI search and retrieval crawlers (used for real-time answers, not training)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Block training crawlers (content not available for model training)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+# Allow all other bots (search indexers, etc.)
+User-agent: *
+Allow: /
+
+Sitemap: https://opencli.info/sitemap.xml
