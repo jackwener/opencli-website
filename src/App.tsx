@@ -10,6 +10,7 @@ import { PluginsPage } from './pages/PluginsPage'
 import { PluginDetailPage } from './pages/PluginDetailPage'
 import { BlogPage } from './pages/BlogPage'
 import { BlogPostPage } from './pages/BlogPostPage'
+import { DownloadPage } from './pages/DownloadPage'
 
 function HomePage() {
   return (
@@ -38,6 +39,7 @@ export default function App() {
         <Route path="/plugins/:slug" element={<PluginDetailPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />
+        <Route path="/download" element={<DownloadPage />} />
       </Routes>
     </>
   )
