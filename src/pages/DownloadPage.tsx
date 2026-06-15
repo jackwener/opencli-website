@@ -35,19 +35,24 @@ interface PkgInfo {
 // limited, network blocked). Update on each App release.
 const FALLBACK: PkgInfo = {
   version: '0.1.1',
-  releaseUrl: 'https://github.com/jackwener/OpenCLI-App/releases/tag/v0.1.1',
+  releaseUrl: 'https://github.com/jackwener/opencli-website/releases',
   publishedAt: '',
   asset: {
     name: 'BrowserBridge_0.1.1_aarch64.pkg',
     size: 87_093_892,
     browser_download_url:
-      'https://github.com/jackwener/OpenCLI-App/releases/download/v0.1.1/BrowserBridge_0.1.1_aarch64.pkg',
+      'https://github.com/jackwener/opencli-website/releases',
     digest: null,
   },
-  sha256: 'db6d09213311f03d947dffaff9b312b2613a1b161e3c89959ccabadfcbc9d913',
+  sha256: null,
 }
 
-const RELEASES_API = 'https://api.github.com/repos/jackwener/OpenCLI-App/releases'
+// App releases live in the public `opencli-website` repo (not the private
+// `OpenCLI-App` source repo), tagged `app-v*` so they don't collide with
+// any future website-only tag. This is the same origin as the website
+// itself, so the browser fetch is anonymous + cross-origin-allowed.
+const RELEASES_API = 'https://api.github.com/repos/jackwener/opencli-website/releases'
+const APP_TAG_PREFIX = 'app-v'
 
 /* ─── Helpers ─── */
 
@@ -95,14 +100,17 @@ async function fetchLatestPkg(): Promise<PkgInfo | null> {
   })
   if (!res.ok) return null
   const releases = (await res.json()) as Release[]
-  // /releases/latest skips drafts but also skips prereleases; fall back to
-  // the most recent non-draft release of any kind.
-  const candidates = releases.filter((r) => !r.draft)
+  // Only consider non-draft releases tagged with `app-v*` so any future
+  // website-only release tag (e.g. a site redesign) doesn't accidentally
+  // become the "App download" surfaced here. Most recent first.
+  const candidates = releases.filter(
+    (r) => !r.draft && r.tag_name.startsWith(APP_TAG_PREFIX),
+  )
   for (const release of candidates) {
     const asset = pickPkgAsset(release.assets)
     if (!asset) continue
     return {
-      version: release.tag_name.replace(/^v/, '') || release.name,
+      version: release.tag_name.slice(APP_TAG_PREFIX.length) || release.name,
       releaseUrl: release.html_url,
       publishedAt: release.published_at,
       asset,
@@ -125,17 +133,15 @@ export function DownloadPage() {
     fetchLatestPkg()
       .then((latest) => {
         if (cancelled) return
-        if (latest) {
-          setInfo(latest)
-        } else {
-          setInfo(FALLBACK)
-          setError('No published release found yet — showing the static fallback.')
-        }
+        // The FALLBACK link is the same canonical Releases page the API
+        // would have led to — silently swap in if the live fetch had
+        // nothing matching `app-v*` yet, no scary warning needed.
+        setInfo(latest ?? FALLBACK)
       })
       .catch(() => {
         if (cancelled) return
         setInfo(FALLBACK)
-        setError("Couldn't reach the GitHub Releases API — showing the static fallback.")
+        setError("Couldn't reach GitHub — showing the latest known release info.")
       })
       .finally(() => {
         if (!cancelled) setLoading(false)
