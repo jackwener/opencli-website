@@ -2300,52 +2300,13 @@ button {
   font-weight: 800;
 }
 
-.download-meta {
-  list-style: none;
+.download-size {
   margin: var(--space-md) 0 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  font-size: 0.9rem;
-}
-
-.download-meta li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-sm);
-  padding-bottom: 0.7rem;
-  border-bottom: 1px solid var(--border-soft, rgba(255, 255, 255, 0.06));
-}
-
-.download-meta li:last-child {
-  border-bottom: 0;
-  padding-bottom: 0;
-}
-
-.download-meta-label {
-  color: var(--text-dim);
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.download-meta-value {
+  text-align: center;
   font-family: var(--font-mono);
   font-size: 0.85rem;
-  color: var(--text);
-  text-align: right;
-}
-
-.download-sha {
-  background: rgba(0, 0, 0, 0.4);
-  padding: 0.3rem 0.5rem;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  letter-spacing: 0.02em;
-  word-break: break-all;
-  max-width: 360px;
+  color: var(--text-dim);
+  letter-spacing: 0.01em;
 }
 
 .download-warning {

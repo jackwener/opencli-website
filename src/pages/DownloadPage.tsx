@@ -184,28 +184,9 @@ export function DownloadPage() {
                   Download {info.asset.name}
                 </a>
 
-                <ul className="download-meta">
-                  <li>
-                    <span className="download-meta-label">Size</span>
-                    <span className="download-meta-value">
-                      {formatBytes(info.asset.size)}
-                    </span>
-                  </li>
-                  {info.sha256 && (
-                    <li>
-                      <span className="download-meta-label">SHA-256</span>
-                      <code className="download-meta-value download-sha">
-                        {info.sha256}
-                      </code>
-                    </li>
-                  )}
-                  <li>
-                    <span className="download-meta-label">Signed</span>
-                    <span className="download-meta-value">
-                      Developer ID + Notarized by Apple
-                    </span>
-                  </li>
-                </ul>
+                <div className="download-size">
+                  {formatBytes(info.asset.size)} · macOS double-click installer
+                </div>
 
                 {error && <div className="download-warning">{error}</div>}
               </>
@@ -284,8 +265,9 @@ export function DownloadPage() {
 
           <h3 className="download-subsection-title">Verify the download</h3>
           <p className="download-prose">
-            For paranoid installs (recommended in CI), compare the SHA-256
-            shown above against the file you downloaded:
+            For paranoid installs (recommended in CI), compute the SHA-256 of
+            the file you downloaded and compare it to the digest GitHub shows
+            on the release asset:
           </p>
           <pre className="download-code">
 {`shasum -a 256 ${info?.asset.name ?? FALLBACK.asset.name}`}
