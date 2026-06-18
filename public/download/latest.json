@@ -1,11 +1,11 @@
 {
-  "version": "0.1.10",
-  "notes": "BrowserBridge 0.1.10",
-  "pub_date": "2026-06-18T19:15:38.477Z",
+  "version": "0.1.11",
+  "notes": "BrowserBridge 0.1.11",
+  "pub_date": "2026-06-18T21:09:38.374Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSSzJSQ202NXRld1JoZEFFVWt4NVB0elR2Tm9oY2l3OThUeisyNFEzdWNHVWI5SjJpdTJ1RmJMYVYyK1ltVTNTQWJ5eC9IUnEvQVRNWVNNa0RDK2h6QlpTSVVYSEVobXdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgxODA5NjA5CWZpbGU6QnJvd3NlckJyaWRnZV8wLjEuMTBfYWFyY2g2NC5hcHAudGFyLmd6CjNncStrVjlrb1ZzS0FHNHRrOFlEQk4vbFFpamZGZFU3OHlSRGVmTFlOU2JpS1VJejVGV2lnelhzWG5BNEpuOHN0bGN0bFNsV0YwQ3RjQWN3Smh1M0J3PT0K",
-      "url": "https://github.com/jackwener/opencli-website/releases/download/app-v0.1.10/BrowserBridge_0.1.10_aarch64.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSSzJSQ202NXRld1d2UWNDblZwUGJZT0pCNTdCaUJkaWNWb29XR0p4VzZpeHZPeDh6WlM3QlRxWWdUS1RtMkFWK0ZkRUZIU09GK3BERk1paGFPTzllVTQ3MkVxUkZXN2d3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgxODEzNzQzCWZpbGU6QnJvd3NlckJyaWRnZV8wLjEuMTFfYWFyY2g2NC5hcHAudGFyLmd6CnprWWFWeTBpRGFmQ1d0UGZjWVUrdk56YVJ0N0JIN3RpcHVlUmNaOHFGL1JMS2NHY3JRZ3greGFBeEl0eHMzSnJyNEpvK1FoYnZETDVNSnJRd1ZKY0F3PT0K",
+      "url": "https://github.com/jackwener/opencli-website/releases/download/app-v0.1.11/BrowserBridge_0.1.11_aarch64.app.tar.gz"
     }
   }
 }

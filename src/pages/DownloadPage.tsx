@@ -34,17 +34,17 @@ interface PkgInfo {
 // Fallback used if the GitHub API is unreachable (offline preview, rate
 // limited, network blocked). Update on each App release.
 const FALLBACK: PkgInfo = {
-  version: '0.1.10',
-  releaseUrl: 'https://github.com/jackwener/opencli-website/releases/tag/app-v0.1.10',
+  version: '0.1.11',
+  releaseUrl: 'https://github.com/jackwener/opencli-website/releases/tag/app-v0.1.11',
   publishedAt: '',
   asset: {
-    name: 'BrowserBridge_0.1.10_aarch64.pkg',
-    size: 87_419_522,
+    name: 'BrowserBridge_0.1.11_aarch64.pkg',
+    size: 87_409_212,
     browser_download_url:
-      'https://github.com/jackwener/opencli-website/releases/download/app-v0.1.10/BrowserBridge_0.1.10_aarch64.pkg',
+      'https://github.com/jackwener/opencli-website/releases/download/app-v0.1.11/BrowserBridge_0.1.11_aarch64.pkg',
     digest: null,
   },
-  sha256: '65a08e9799e269408437dcb90a8b5ad20ef75639fc132f9ebe2845dfa5621850',
+  sha256: '367c2b4e37db142f0e38e1b8768e77766d1751da35eaa06f342960b4a12d1e5a',
 }
 
 // App releases live in the public `opencli-website` repo (not the private
