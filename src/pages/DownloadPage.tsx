@@ -94,6 +94,17 @@ function extractSha256(digest: string | null): string | null {
   return m ? m[1].toLowerCase() : null
 }
 
+function compareVersionDesc(a: string, b: string): number {
+  const pa = a.split('.').map((part) => Number.parseInt(part, 10) || 0)
+  const pb = b.split('.').map((part) => Number.parseInt(part, 10) || 0)
+  const len = Math.max(pa.length, pb.length, 3)
+  for (let i = 0; i < len; i += 1) {
+    const diff = (pb[i] ?? 0) - (pa[i] ?? 0)
+    if (diff !== 0) return diff
+  }
+  return 0
+}
+
 async function fetchLatestPkg(): Promise<PkgInfo | null> {
   const res = await fetch(RELEASES_API, {
     headers: { Accept: 'application/vnd.github+json' },
@@ -103,9 +114,14 @@ async function fetchLatestPkg(): Promise<PkgInfo | null> {
   // Only consider non-draft releases tagged with `app-v*` so any future
   // website-only release tag (e.g. a site redesign) doesn't accidentally
   // become the "App download" surfaced here. Most recent first.
-  const candidates = releases.filter(
-    (r) => !r.draft && r.tag_name.startsWith(APP_TAG_PREFIX),
-  )
+  const candidates = releases
+    .filter((r) => !r.draft && r.tag_name.startsWith(APP_TAG_PREFIX))
+    .sort((a, b) =>
+      compareVersionDesc(
+        a.tag_name.slice(APP_TAG_PREFIX.length),
+        b.tag_name.slice(APP_TAG_PREFIX.length),
+      ),
+    )
   for (const release of candidates) {
     const asset = pickPkgAsset(release.assets)
     if (!asset) continue
