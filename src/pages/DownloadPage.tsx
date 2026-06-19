@@ -41,17 +41,17 @@ interface DownloadInfo {
 // Fallback used if the GitHub API is unreachable (offline preview, rate
 // limited, network blocked). Update on each App release.
 const FALLBACK: DownloadInfo = {
-  version: '0.1.14',
-  releaseUrl: 'https://github.com/jackwener/opencli-website/releases/tag/app-v0.1.14',
+  version: '0.1.18',
+  releaseUrl: 'https://github.com/jackwener/opencli-website/releases/tag/app-v0.1.18',
   publishedAt: '',
   mac: {
     label: 'macOS',
     detail: 'Apple Silicon · signed and notarized .pkg',
     asset: {
-      name: 'BrowserBridge_0.1.14_aarch64.pkg',
-      size: 87_453_070,
+      name: 'OpenCLIApp_0.1.18_aarch64.pkg',
+      size: 87_460_372,
       browser_download_url:
-        'https://github.com/jackwener/opencli-website/releases/download/app-v0.1.14/BrowserBridge_0.1.14_aarch64.pkg',
+        'https://github.com/jackwener/opencli-website/releases/download/app-v0.1.18/OpenCLIApp_0.1.18_aarch64.pkg',
       digest: null,
     },
   },
@@ -60,10 +60,10 @@ const FALLBACK: DownloadInfo = {
     detail: 'x64 · unsigned NSIS installer',
     warning: 'Unsigned preview: Windows SmartScreen may require More info -> Run anyway.',
     asset: {
-      name: 'BrowserBridge_0.1.14_x64-setup.exe',
-      size: 31_105_329,
+      name: 'OpenCLIApp_0.1.18_x64-setup.exe',
+      size: 31_507_833,
       browser_download_url:
-        'https://github.com/jackwener/opencli-website/releases/download/app-v0.1.14/BrowserBridge_0.1.14_x64-setup.exe',
+        'https://github.com/jackwener/opencli-website/releases/download/app-v0.1.18/OpenCLIApp_0.1.18_x64-setup.exe',
       digest: null,
     },
   },
@@ -97,7 +97,7 @@ function formatDate(iso: string): string {
 
 /**
  * Pick the .pkg from the release assets. Prefers names matching the
- * Apple-Silicon BrowserBridge pattern, falls back to the first `.pkg` asset.
+ * Apple-Silicon OpenCLIApp pattern, falls back to the first `.pkg` asset.
  */
 function pickPkgAsset(assets: ReleaseAsset[]): ReleaseAsset | null {
   const pkgs = assets.filter((a) => a.name.toLowerCase().endsWith('.pkg'))
@@ -231,7 +231,7 @@ export function DownloadPage() {
       <section className="download-hero">
         <div className="container">
           <h1 className="download-title">
-            Download <span className="download-product">BrowserBridge</span>
+            Download <span className="download-product">OpenCLIApp</span>
           </h1>
           <p className="download-subtitle">
             The menu-bar companion app that lets <code>opencli</code> drive your
@@ -332,7 +332,7 @@ export function DownloadPage() {
               <strong> Run anyway</strong>.
             </li>
             <li>
-              Open <code>Applications → BrowserBridge.app</code> once. The
+              Open <code>Applications → OpenCLIApp.app</code> once. The
               menu-bar icon appears and the bundled <code>opencli</code> shim
               is installed at <code>/usr/local/bin/opencli</code>.
             </li>
