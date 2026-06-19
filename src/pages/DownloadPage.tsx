@@ -21,30 +21,55 @@ interface Release {
   assets: ReleaseAsset[]
 }
 
-interface PkgInfo {
+interface PlatformDownload {
+  label: string
+  detail: string
+  warning?: string
+  asset: ReleaseAsset
+  sha256: string | null
+}
+
+interface DownloadInfo {
   version: string
   releaseUrl: string
   publishedAt: string
-  asset: ReleaseAsset
-  sha256: string | null
+  mac: PlatformDownload | null
+  windows: PlatformDownload | null
 }
 
 /* ─── Constants ─── */
 
 // Fallback used if the GitHub API is unreachable (offline preview, rate
 // limited, network blocked). Update on each App release.
-const FALLBACK: PkgInfo = {
-  version: '0.1.13',
-  releaseUrl: 'https://github.com/jackwener/opencli-website/releases/tag/app-v0.1.13',
+const FALLBACK: DownloadInfo = {
+  version: '0.1.14',
+  releaseUrl: 'https://github.com/jackwener/opencli-website/releases/tag/app-v0.1.14',
   publishedAt: '',
-  asset: {
-    name: 'BrowserBridge_0.1.13_aarch64.pkg',
-    size: 87_435_683,
-    browser_download_url:
-      'https://github.com/jackwener/opencli-website/releases/download/app-v0.1.13/BrowserBridge_0.1.13_aarch64.pkg',
-    digest: null,
+  mac: {
+    label: 'macOS',
+    detail: 'Apple Silicon · signed and notarized .pkg',
+    asset: {
+      name: 'BrowserBridge_0.1.14_aarch64.pkg',
+      size: 87_453_070,
+      browser_download_url:
+        'https://github.com/jackwener/opencli-website/releases/download/app-v0.1.14/BrowserBridge_0.1.14_aarch64.pkg',
+      digest: null,
+    },
+    sha256: 'f86916396f3f16b301bd358e836d342a57bfc10e0d5ee11721adf44c401b6121',
   },
-  sha256: '73660cd2d151dd38f44d972df615abd6ccceb9b4493d69fc69f7e16c9204c61b',
+  windows: {
+    label: 'Windows',
+    detail: 'x64 · unsigned NSIS installer',
+    warning: 'Unsigned preview: Windows SmartScreen may require More info -> Run anyway.',
+    asset: {
+      name: 'BrowserBridge_0.1.14_x64-setup.exe',
+      size: 31_105_329,
+      browser_download_url:
+        'https://github.com/jackwener/opencli-website/releases/download/app-v0.1.14/BrowserBridge_0.1.14_x64-setup.exe',
+      digest: null,
+    },
+    sha256: 'ea88385bc9ac60ad8f319fbee50226adea081b66bc26c6d347fc2a418678b5fc',
+  },
 }
 
 // App releases live in the public `opencli-website` repo (not the private
@@ -85,6 +110,13 @@ function pickPkgAsset(assets: ReleaseAsset[]): ReleaseAsset | null {
   return arm ?? pkgs[0]
 }
 
+function pickWindowsAsset(assets: ReleaseAsset[]): ReleaseAsset | null {
+  const installers = assets.filter((a) => a.name.toLowerCase().endsWith('.exe'))
+  if (installers.length === 0) return null
+  const x64Setup = installers.find((a) => /x64.*setup|setup.*x64/i.test(a.name))
+  return x64Setup ?? installers[0]
+}
+
 /**
  * GitHub asset.digest looks like `sha256:abcdef...`. Strip the prefix.
  */
@@ -105,7 +137,7 @@ function compareVersionDesc(a: string, b: string): number {
   return 0
 }
 
-async function fetchLatestPkg(): Promise<PkgInfo | null> {
+async function fetchLatestDownload(): Promise<DownloadInfo | null> {
   const res = await fetch(RELEASES_API, {
     headers: { Accept: 'application/vnd.github+json' },
   })
@@ -123,30 +155,75 @@ async function fetchLatestPkg(): Promise<PkgInfo | null> {
       ),
     )
   for (const release of candidates) {
-    const asset = pickPkgAsset(release.assets)
-    if (!asset) continue
+    const macAsset = pickPkgAsset(release.assets)
+    const windowsAsset = pickWindowsAsset(release.assets)
+    if (!macAsset && !windowsAsset) continue
     return {
       version: release.tag_name.slice(APP_TAG_PREFIX.length) || release.name,
       releaseUrl: release.html_url,
       publishedAt: release.published_at,
-      asset,
-      sha256: extractSha256(asset.digest),
+      mac: macAsset
+        ? {
+            label: 'macOS',
+            detail: 'Apple Silicon · signed and notarized .pkg',
+            asset: macAsset,
+            sha256: extractSha256(macAsset.digest),
+          }
+        : null,
+      windows: windowsAsset
+        ? {
+            label: 'Windows',
+            detail: 'x64 · unsigned NSIS installer',
+            warning: 'Unsigned preview: Windows SmartScreen may require More info -> Run anyway.',
+            asset: windowsAsset,
+            sha256: extractSha256(windowsAsset.digest),
+          }
+        : null,
     }
   }
   return null
+}
+
+function PlatformDownloadCard({ download }: { download: PlatformDownload }) {
+  return (
+    <div className="download-platform-card">
+      <div className="download-platform-head">
+        <div>
+          <div className="download-platform-label">{download.label}</div>
+          <div className="download-platform-detail">{download.detail}</div>
+        </div>
+        <div className="download-platform-size">{formatBytes(download.asset.size)}</div>
+      </div>
+
+      <a
+        href={download.asset.browser_download_url}
+        className="download-primary-button"
+        download
+      >
+        <span className="download-primary-icon">↓</span>
+        Download {download.asset.name}
+      </a>
+
+      <div className="download-size">
+        SHA256 {download.sha256 ?? 'available from GitHub release metadata'}
+      </div>
+
+      {download.warning && <div className="download-warning">{download.warning}</div>}
+    </div>
+  )
 }
 
 /* ─── Component ─── */
 
 export function DownloadPage() {
   const fadeIn = useFadeIn()
-  const [info, setInfo] = useState<PkgInfo | null>(null)
+  const [info, setInfo] = useState<DownloadInfo | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     let cancelled = false
-    fetchLatestPkg()
+    fetchLatestDownload()
       .then((latest) => {
         if (cancelled) return
         // The FALLBACK link is the same canonical Releases page the API
@@ -177,7 +254,7 @@ export function DownloadPage() {
           <p className="download-subtitle">
             The menu-bar companion app that lets <code>opencli</code> drive your
             already-signed-in browser sessions, without juggling profiles or
-            shells. macOS only for now.
+            shells. Available for macOS and Windows.
           </p>
 
           <div className="download-card">
@@ -194,20 +271,12 @@ export function DownloadPage() {
                       </div>
                     )}
                   </div>
-                  <div className="download-arch-chip">macOS · Apple Silicon</div>
+                  <div className="download-arch-chip">macOS + Windows</div>
                 </div>
 
-                <a
-                  href={info.asset.browser_download_url}
-                  className="download-primary-button"
-                  download
-                >
-                  <span className="download-primary-icon">↓</span>
-                  Download {info.asset.name}
-                </a>
-
-                <div className="download-size">
-                  {formatBytes(info.asset.size)} · macOS double-click installer
+                <div className="download-platform-grid">
+                  {info.mac && <PlatformDownloadCard download={info.mac} />}
+                  {info.windows && <PlatformDownloadCard download={info.windows} />}
                 </div>
 
                 {error && <div className="download-warning">{error}</div>}
@@ -270,10 +339,15 @@ export function DownloadPage() {
         <div className="container download-narrow">
           <h2 className="download-section-title">Install</h2>
           <ol className="download-steps">
-            <li>Download the <code>.pkg</code> with the button above.</li>
+            <li>Download the macOS <code>.pkg</code> or Windows <code>.exe</code> with the buttons above.</li>
             <li>
-              Double-click to install. The pkg is signed and notarized, so
-              Gatekeeper lets it through without right-click → Open.
+              On macOS, double-click to install. The pkg is signed and
+              notarized, so Gatekeeper lets it through without right-click → Open.
+            </li>
+            <li>
+              On Windows, run the setup exe. The current Windows build is
+              unsigned, so SmartScreen may require <strong>More info</strong> →
+              <strong> Run anyway</strong>.
             </li>
             <li>
               Open <code>Applications → BrowserBridge.app</code> once. The
@@ -292,12 +366,14 @@ export function DownloadPage() {
             on the release asset:
           </p>
           <pre className="download-code">
-{`shasum -a 256 ${info?.asset.name ?? FALLBACK.asset.name}`}
+{`shasum -a 256 ${info?.mac?.asset.name ?? FALLBACK.mac?.asset.name ?? 'BrowserBridge.pkg'}
+shasum -a 256 ${info?.windows?.asset.name ?? FALLBACK.windows?.asset.name ?? 'BrowserBridge-setup.exe'}`}
           </pre>
 
           <h3 className="download-subsection-title">System requirements</h3>
           <ul className="download-features">
             <li>macOS 13 (Ventura) or later, Apple Silicon (M-series)</li>
+            <li>Windows 10/11 x64 with Microsoft Edge WebView2 runtime</li>
             <li>Google Chrome installed (the bridge connects to Chrome)</li>
             <li>~150 MB on disk for the bundled Node + OpenCLI runtime</li>
           </ul>
