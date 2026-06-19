@@ -26,7 +26,6 @@ interface PlatformDownload {
   detail: string
   warning?: string
   asset: ReleaseAsset
-  sha256: string | null
 }
 
 interface DownloadInfo {
@@ -55,7 +54,6 @@ const FALLBACK: DownloadInfo = {
         'https://github.com/jackwener/opencli-website/releases/download/app-v0.1.14/BrowserBridge_0.1.14_aarch64.pkg',
       digest: null,
     },
-    sha256: 'f86916396f3f16b301bd358e836d342a57bfc10e0d5ee11721adf44c401b6121',
   },
   windows: {
     label: 'Windows',
@@ -68,7 +66,6 @@ const FALLBACK: DownloadInfo = {
         'https://github.com/jackwener/opencli-website/releases/download/app-v0.1.14/BrowserBridge_0.1.14_x64-setup.exe',
       digest: null,
     },
-    sha256: 'ea88385bc9ac60ad8f319fbee50226adea081b66bc26c6d347fc2a418678b5fc',
   },
 }
 
@@ -117,15 +114,6 @@ function pickWindowsAsset(assets: ReleaseAsset[]): ReleaseAsset | null {
   return x64Setup ?? installers[0]
 }
 
-/**
- * GitHub asset.digest looks like `sha256:abcdef...`. Strip the prefix.
- */
-function extractSha256(digest: string | null): string | null {
-  if (!digest) return null
-  const m = /^sha256:([0-9a-fA-F]{64})$/.exec(digest.trim())
-  return m ? m[1].toLowerCase() : null
-}
-
 function compareVersionDesc(a: string, b: string): number {
   const pa = a.split('.').map((part) => Number.parseInt(part, 10) || 0)
   const pb = b.split('.').map((part) => Number.parseInt(part, 10) || 0)
@@ -167,7 +155,6 @@ async function fetchLatestDownload(): Promise<DownloadInfo | null> {
             label: 'macOS',
             detail: 'Apple Silicon · signed and notarized .pkg',
             asset: macAsset,
-            sha256: extractSha256(macAsset.digest),
           }
         : null,
       windows: windowsAsset
@@ -176,7 +163,6 @@ async function fetchLatestDownload(): Promise<DownloadInfo | null> {
             detail: 'x64 · unsigned NSIS installer',
             warning: 'Unsigned preview: Windows SmartScreen may require More info -> Run anyway.',
             asset: windowsAsset,
-            sha256: extractSha256(windowsAsset.digest),
           }
         : null,
     }
@@ -201,12 +187,8 @@ function PlatformDownloadCard({ download }: { download: PlatformDownload }) {
         download
       >
         <span className="download-primary-icon">↓</span>
-        Download {download.asset.name}
+        Download for {download.label}
       </a>
-
-      <div className="download-size">
-        SHA256 {download.sha256 ?? 'available from GitHub release metadata'}
-      </div>
 
       {download.warning && <div className="download-warning">{download.warning}</div>}
     </div>
@@ -359,16 +341,20 @@ export function DownloadPage() {
             </li>
           </ol>
 
-          <h3 className="download-subsection-title">Verify the download</h3>
+          <h3 className="download-subsection-title">Release integrity</h3>
           <p className="download-prose">
-            For paranoid installs (recommended in CI), compute the SHA-256 of
-            the file you downloaded and compare it to the digest GitHub shows
-            on the release asset:
+            If you need to verify an installer manually, use the digest listed
+            on the corresponding GitHub release asset:
           </p>
-          <pre className="download-code">
-{`shasum -a 256 ${info?.mac?.asset.name ?? FALLBACK.mac?.asset.name ?? 'BrowserBridge.pkg'}
-shasum -a 256 ${info?.windows?.asset.name ?? FALLBACK.windows?.asset.name ?? 'BrowserBridge-setup.exe'}`}
-          </pre>
+          <p className="download-prose">
+            <a
+              href={info?.releaseUrl ?? FALLBACK.releaseUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open the latest release on GitHub →
+            </a>
+          </p>
 
           <h3 className="download-subsection-title">System requirements</h3>
           <ul className="download-features">

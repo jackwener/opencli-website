@@ -2343,16 +2343,6 @@ button {
   font-weight: 800;
 }
 
-.download-size {
-  margin: var(--space-md) 0 0;
-  text-align: center;
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  color: var(--text-dim);
-  letter-spacing: 0.01em;
-  word-break: break-all;
-}
-
 .download-warning {
   margin-top: var(--space-sm);
   padding: 0.8rem 1rem;
