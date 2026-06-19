@@ -1,11 +1,11 @@
 # OpenCLI
 
-> Make any website or Electron app your CLI. Zero setup. AI-powered.
-> Turn websites, browser sessions, Electron apps, and local tools into deterministic interfaces for humans and AI agents.
+> 把你已登录的浏览器，交给 CLI 和 Agent。
+> OpenCLI reuses your local Chrome login and turns browser work into stable commands for CLI and AI agents.
 
 ## What OpenCLI does
 
-OpenCLI converts any website into a reliable CLI command by reusing your existing Chrome login session — no tokens, no API keys, no brittle scraping. Three modes:
+OpenCLI turns your already logged-in local Chrome browser into a reliable command surface for CLI workflows and AI agents — no tokens, no API keys, no brittle scraping. Three modes:
 
 1. **Built-in adapters** — 100+ sites pre-built: Twitter/X, Xiaohongshu, Bilibili, Zhihu, YouTube, LinkedIn, Reddit, HackerNews, and more
 2. **Browser automation for AI agents** — Install the `opencli-browser` skill in Claude Code or Cursor, and the agent can navigate, click, type, extract, and screenshot any page via your logged-in browser

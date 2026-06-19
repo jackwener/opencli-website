@@ -8,13 +8,13 @@ export function Hero() {
           v{import.meta.env.VITE_OPENCLI_VERSION || '1.0'} — Now with Desktop App Support
         </div>
         <h1>
-          Make Any Website
+          把你已登录的浏览器
           <br />
-          <span className="gradient-text">Your CLI</span>
+          <span className="gradient-text">交给 CLI 和 Agent</span>
         </h1>
         <p className="hero-desc">
-          Turn any website or Electron app into a powerful command-line interface.
-          Zero risk. Reuse Chrome login. AI-powered discovery.
+          OpenCLI 复用你本机 Chrome 的登录状态，把网页操作变成稳定命令，
+          让 CLI 和 AI Agent 直接使用你已经登录的浏览器。
         </p>
         <div className="hero-actions">
           <a
