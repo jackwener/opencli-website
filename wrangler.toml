@@ -1,0 +1,22 @@
+name = "opencli-feedback"
+main = "worker/feedback.ts"
+compatibility_date = "2026-06-21"
+routes = [
+  { pattern = "opencli.info/api/feedback", zone_name = "opencli.info" }
+]
+
+[observability]
+enabled = true
+
+[vars]
+GITHUB_OWNER = "jackwener"
+GITHUB_REPO = "OpenCLI-App"
+ALLOWED_ORIGINS = "tauri://localhost,http://localhost:1420,http://127.0.0.1:1420,https://opencli.info"
+
+# Required secrets:
+#   wrangler secret put GITHUB_APP_ID
+#   wrangler secret put GITHUB_INSTALLATION_ID
+#   wrangler secret put GITHUB_APP_PRIVATE_KEY
+#
+# Optional:
+#   wrangler secret put TURNSTILE_SECRET

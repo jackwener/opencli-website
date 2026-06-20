@@ -23,6 +23,9 @@ public/
 ├── CNAME                   # Custom domain (opencli.info)
 ├── favicon.svg
 └── icons.svg
+
+worker/
+└── feedback.ts             # Cloudflare Worker: OpenCLIApp feedback -> GitHub issue
 ```
 
 ### Key Modules
@@ -53,6 +56,9 @@ npm install
 npm run dev       # Start dev server at localhost:5173
 npm run build     # Production build → dist/
 npm run preview   # Preview production build
+npm run worker:dev        # Run the feedback Worker locally
+npm run worker:typecheck  # Type-check the Cloudflare Worker
+npm run worker:deploy     # Deploy the feedback Worker with Wrangler
 ```
 
 ## Deployment
@@ -67,6 +73,32 @@ Deployment is also triggered via `repository_dispatch` when the opencli repo's `
 opencli.info/         → This website (landing page)
 opencli.info/docs/    → VitePress documentation (built from opencli repo)
 ```
+
+## Feedback Worker
+
+`worker/feedback.ts` receives OpenCLIApp feedback and creates issues in
+`jackwener/OpenCLI-App` through a GitHub App. The desktop app never stores a
+GitHub token.
+
+Required Cloudflare secrets:
+
+```bash
+wrangler secret put GITHUB_APP_ID
+wrangler secret put GITHUB_INSTALLATION_ID
+wrangler secret put GITHUB_APP_PRIVATE_KEY
+```
+
+Optional:
+
+```bash
+wrangler secret put TURNSTILE_SECRET
+```
+
+GitHub App permissions should be scoped to the OpenCLI-App repository with
+Issues read/write access. If `TURNSTILE_SECRET` is configured, clients must
+send a Turnstile token; otherwise the Worker still applies a best-effort
+per-IP cooldown and should be paired with Cloudflare WAF/rate-limit rules for
+production abuse control.
 
 ## License
 
