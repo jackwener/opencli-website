@@ -41,17 +41,17 @@ interface DownloadInfo {
 // Fallback used if the GitHub API is unreachable (offline preview, rate
 // limited, network blocked). Update on each App release.
 const FALLBACK: DownloadInfo = {
-  version: '0.1.24',
-  releaseUrl: 'https://github.com/jackwener/opencli-website/releases/tag/app-v0.1.24',
+  version: '0.1.25',
+  releaseUrl: 'https://github.com/jackwener/opencli-website/releases/tag/app-v0.1.25',
   publishedAt: '',
   mac: {
     label: 'macOS',
     detail: 'Apple Silicon · signed and notarized .pkg',
     asset: {
-      name: 'OpenCLIApp_0.1.24_aarch64.pkg',
-      size: 87_385_996,
+      name: 'OpenCLIApp_0.1.25_aarch64.pkg',
+      size: 87_384_332,
       browser_download_url:
-        'https://github.com/jackwener/opencli-website/releases/download/app-v0.1.24/OpenCLIApp_0.1.24_aarch64.pkg',
+        'https://github.com/jackwener/opencli-website/releases/download/app-v0.1.25/OpenCLIApp_0.1.25_aarch64.pkg',
       digest: null,
     },
   },
@@ -60,10 +60,10 @@ const FALLBACK: DownloadInfo = {
     detail: 'x64 · unsigned NSIS installer',
     warning: 'Unsigned preview: Windows SmartScreen may require More info -> Run anyway.',
     asset: {
-      name: 'OpenCLIApp_0.1.24_x64-setup.exe',
-      size: 31_320_925,
+      name: 'OpenCLIApp_0.1.25_x64-setup.exe',
+      size: 31_309_972,
       browser_download_url:
-        'https://github.com/jackwener/opencli-website/releases/download/app-v0.1.24/OpenCLIApp_0.1.24_x64-setup.exe',
+        'https://github.com/jackwener/opencli-website/releases/download/app-v0.1.25/OpenCLIApp_0.1.25_x64-setup.exe',
       digest: null,
     },
   },
