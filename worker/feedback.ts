@@ -272,15 +272,11 @@ async function createGitHubAppJwt(env: Env): Promise<string> {
 }
 
 async function importPrivateKey(pem: string): Promise<CryptoKey> {
-  const normalized = pem.replace(/\\n/g, '\n');
-  const body = normalized
-    .replace('-----BEGIN PRIVATE KEY-----', '')
-    .replace('-----END PRIVATE KEY-----', '')
-    .replace(/\s+/g, '');
-  const raw = Uint8Array.from(atob(body), (char) => char.charCodeAt(0));
+  const { der, format } = decodePemPrivateKey(pem);
+  const raw = format === 'pkcs1' ? wrapRsaPrivateKeyPkcs1ToPkcs8(der) : der;
   return crypto.subtle.importKey(
     'pkcs8',
-    raw,
+    toArrayBuffer(raw),
     {
       name: 'RSASSA-PKCS1-v1_5',
       hash: 'SHA-256',
@@ -288,6 +284,71 @@ async function importPrivateKey(pem: string): Promise<CryptoKey> {
     false,
     ['sign'],
   );
+}
+
+function toArrayBuffer(bytes: Uint8Array): ArrayBuffer {
+  const buffer = new ArrayBuffer(bytes.byteLength);
+  new Uint8Array(buffer).set(bytes);
+  return buffer;
+}
+
+function decodePemPrivateKey(pem: string): { der: Uint8Array; format: 'pkcs8' | 'pkcs1' } {
+  const normalized = pem.replace(/\\n/g, '\n').trim();
+  const pkcs8 = extractPemBody(normalized, 'PRIVATE KEY');
+  if (pkcs8) return { der: base64ToBytes(pkcs8), format: 'pkcs8' };
+  const pkcs1 = extractPemBody(normalized, 'RSA PRIVATE KEY');
+  if (pkcs1) return { der: base64ToBytes(pkcs1), format: 'pkcs1' };
+  throw new Error('GitHub App private key must be a PEM PRIVATE KEY or RSA PRIVATE KEY');
+}
+
+function extractPemBody(pem: string, label: string): string | null {
+  const begin = `-----BEGIN ${label}-----`;
+  const end = `-----END ${label}-----`;
+  const beginIndex = pem.indexOf(begin);
+  const endIndex = pem.indexOf(end);
+  if (beginIndex === -1 || endIndex === -1 || endIndex <= beginIndex) return null;
+  return pem.slice(beginIndex + begin.length, endIndex).replace(/\s+/g, '');
+}
+
+function base64ToBytes(value: string): Uint8Array {
+  return Uint8Array.from(atob(value), (char) => char.charCodeAt(0));
+}
+
+function wrapRsaPrivateKeyPkcs1ToPkcs8(pkcs1: Uint8Array): Uint8Array {
+  const version = new Uint8Array([0x02, 0x01, 0x00]);
+  const rsaEncryptionAlgorithm = new Uint8Array([
+    0x30, 0x0d,
+    0x06, 0x09, 0x2a, 0x86, 0x48, 0x86, 0xf7, 0x0d, 0x01, 0x01, 0x01,
+    0x05, 0x00,
+  ]);
+  const privateKey = der(0x04, pkcs1);
+  return der(0x30, concat(version, rsaEncryptionAlgorithm, privateKey));
+}
+
+function der(tag: number, body: Uint8Array): Uint8Array {
+  return concat(new Uint8Array([tag]), derLength(body.length), body);
+}
+
+function derLength(length: number): Uint8Array {
+  if (length < 0x80) return new Uint8Array([length]);
+  const bytes: number[] = [];
+  let remaining = length;
+  while (remaining > 0) {
+    bytes.unshift(remaining & 0xff);
+    remaining >>= 8;
+  }
+  return new Uint8Array([0x80 | bytes.length, ...bytes]);
+}
+
+function concat(...chunks: Uint8Array[]): Uint8Array {
+  const total = chunks.reduce((sum, chunk) => sum + chunk.length, 0);
+  const result = new Uint8Array(total);
+  let offset = 0;
+  for (const chunk of chunks) {
+    result.set(chunk, offset);
+    offset += chunk.length;
+  }
+  return result;
 }
 
 async function verifyTurnstile(secret: string, token: string, remoteIp: string): Promise<boolean> {

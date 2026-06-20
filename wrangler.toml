@@ -1,6 +1,6 @@
 name = "opencli-feedback"
 main = "worker/feedback.ts"
-compatibility_date = "2026-06-21"
+compatibility_date = "2026-06-20"
 routes = [
   { pattern = "opencli.info/api/feedback", zone_name = "opencli.info" }
 ]
