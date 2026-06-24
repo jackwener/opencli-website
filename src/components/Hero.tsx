@@ -8,13 +8,13 @@ export function Hero() {
           v{import.meta.env.VITE_OPENCLI_VERSION || '1.0'} — Now with Desktop App Support
         </div>
         <h1>
-          把你已登录的浏览器
+          Hand your logged-in browser
           <br />
-          <span className="gradient-text">交给 CLI 和 Agent</span>
+          <span className="gradient-text">to the CLI and AI agents</span>
         </h1>
         <p className="hero-desc">
-          OpenCLI 复用你本机 Chrome 的登录状态，把网页操作变成稳定命令，
-          让 CLI 和 AI Agent 直接使用你已经登录的浏览器。
+          OpenCLI reuses your local Chrome's login state, turning web actions into
+          stable commands so the CLI and AI agents can drive the browser you're already logged into.
         </p>
         <div className="hero-actions">
           <a
@@ -61,8 +61,8 @@ export function Hero() {
               </div>
               <div className="terminal-output">┌─ Bilibili Hot Videos ──────────────────────┐</div>
               <div className="terminal-output">│ # │ Title               │ Views    │ Score │</div>
-              <div className="terminal-output">│ 1 │ 你不知道的编程技巧    │ 1.2M     │ 98    │</div>
-              <div className="terminal-output">│ 2 │ 2026年最佳开源项目    │ 890K     │ 95    │</div>
+              <div className="terminal-output">│ 1 │ Hidden coding tips  │ 1.2M     │ 98    │</div>
+              <div className="terminal-output">│ 2 │ Best 2026 OSS picks │ 890K     │ 95    │</div>
               <div className="terminal-output">└────────────────────────────────────────────┘</div>
               <div className="terminal-line" style={{ marginTop: '0.5rem' }}>
                 <span className="terminal-prompt">$</span>
