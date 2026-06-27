@@ -1,15 +1,15 @@
 {
-  "version": "0.1.33",
-  "notes": "OpenCLIApp 0.1.33",
-  "pub_date": "2026-06-27T10:06:04.000Z",
+  "version": "0.2.0",
+  "notes": "OpenCLIApp 0.2.0. macOS v0.1 users receive a 0.1.35 transition build that opens the v0.2 pkg migration installer download page.",
+  "pub_date": "2026-06-27T13:56:43.000Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSSzJSQ202NXRld2VsY1oySTA3ckQ2WG5EQ1JrZU90UkcrT3pPTkJFS01DSk93bEovSGIwODVYdjVDQWtoTk03SUZnbzBmMy81QityNzlLNHRpblQwNTVOQlcvQmtEekFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgyNTU0MTc2CWZpbGU6T3BlbkNMSUFwcF8wLjEuMzNfYWFyY2g2NC5hcHAudGFyLmd6CjFCaEhuT21XMjQ3V0VWUFRsaGVaTm8ycFRLYVBnTldhYnFZSDFRV05iSEdDc0EvbnMreFJrZmNSSzFoVFI5dFo3U1kwMi9QRW9XdTJFQjdJQTNZTkN3PT0K",
-      "url": "https://github.com/jackwener/opencli-website/releases/download/app-v0.1.33/OpenCLIApp_0.1.33_aarch64.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSSzJSQ202NXRld1FNQWU2dUJpcXNKR1oveVF1RHJoYmlFOW1WVHo5aGtGQU0raFJYeHlBWk9WNDNyVDc2QzdTNVJFZ3dmUUlVZVREZTYvb1UweERGSjZScEIybW5MY1FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgyNTY3MjU1CWZpbGU6T3BlbkNMSUFwcF8wLjEuMzVfYWFyY2g2NC5hcHAudGFyLmd6ClpVVGZvOC9ieVJoQnlXNlJtSjhPVlE5S0NXZklOQ1djUXN5cFJQWDJMZ0tTVUxCQjdYWXNxR1BLOWQrenNLWjZJNnlDOEI4V3R5ckFUdGozZTdJZ0RRPT0K",
+      "url": "https://github.com/jackwener/opencli-website/releases/download/app-v0.2.0/OpenCLIApp_0.1.35_aarch64.app.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSSzJSQ202NXRld1JhY1NHdGt3K1ZGc1B1Vm5MUjQ2REs3Wkk5Qzlid1FMMFJtSnQ3NjBMZDlOL2c2RmpNWURFMkpoRGllMzVnMUMwMHRzLzhUNHZ2SXQyRHIrTjIxNlEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgyNTU0NTY5CWZpbGU6T3BlbkNMSUFwcF8wLjEuMzNfeDY0LXNldHVwLmV4ZQpPalRKSlEzNnh6VXVSSjBJY0tMUCtSZFpOeUdkNGMzNElqZ0FacDJjUU5yai90MTRVYUdzNGRYeVg1U09GcTkwblhTWExSMzl0RXBUUWpFTjQyQzBCQT09Cg==",
-      "url": "https://github.com/jackwener/opencli-website/releases/download/app-v0.1.33/OpenCLIApp_0.1.33_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSSzJSQ202NXRld1Jpcm5rU3hGelVsWUpsODBGVFlTWkE1VzBISjd4TmgrMnJDdjczZUV4SCtwVnl6d083dzZDYllHb2oyVzF1OUl0a0dINWpDeVIrTWt6YmZYQ2JQMHdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgyNTY3NjU1CWZpbGU6T3BlbkNMSUFwcF8wLjIuMF94NjQtc2V0dXAuZXhlCkNmeDRLQXA1OW9FNGRiRWtiWXM3K25jK2w1eUFEYktTaFp0QVpEWUFkVFVoVjNDODBzMUZXZC9MY2tjdFV2ZE1SeHFTSythNUlYVVN2Y3hCVU1ockNBPT0K",
+      "url": "https://github.com/jackwener/opencli-website/releases/download/app-v0.2.0/OpenCLIApp_0.2.0_x64-setup.exe"
     }
   }
 }

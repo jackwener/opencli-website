@@ -41,17 +41,17 @@ interface DownloadInfo {
 // Fallback used if the GitHub API is unreachable (offline preview, rate
 // limited, network blocked). Update on each App release.
 const FALLBACK: DownloadInfo = {
-  version: '0.1.33',
-  releaseUrl: 'https://github.com/jackwener/opencli-website/releases/tag/app-v0.1.33',
+  version: '0.2.0',
+  releaseUrl: 'https://github.com/jackwener/opencli-website/releases/tag/app-v0.2.0',
   publishedAt: '',
   mac: {
     label: 'macOS',
     detail: 'Apple Silicon · signed and notarized .pkg',
     asset: {
-      name: 'OpenCLIApp_0.1.33_aarch64.pkg',
-      size: 89_106_299,
+      name: 'OpenCLIApp_0.2.0_aarch64.pkg',
+      size: 89_127_712,
       browser_download_url:
-        'https://github.com/jackwener/opencli-website/releases/download/app-v0.1.33/OpenCLIApp_0.1.33_aarch64.pkg',
+        'https://github.com/jackwener/opencli-website/releases/download/app-v0.2.0/OpenCLIApp_0.2.0_aarch64.pkg',
       digest: null,
     },
   },
@@ -60,10 +60,10 @@ const FALLBACK: DownloadInfo = {
     detail: 'x64 · unsigned NSIS installer',
     warning: 'Unsigned preview: Windows SmartScreen may require More info -> Run anyway.',
     asset: {
-      name: 'OpenCLIApp_0.1.33_x64-setup.exe',
-      size: 32_687_827,
+      name: 'OpenCLIApp_0.2.0_x64-setup.exe',
+      size: 32_693_035,
       browser_download_url:
-        'https://github.com/jackwener/opencli-website/releases/download/app-v0.1.33/OpenCLIApp_0.1.33_x64-setup.exe',
+        'https://github.com/jackwener/opencli-website/releases/download/app-v0.2.0/OpenCLIApp_0.2.0_x64-setup.exe',
       digest: null,
     },
   },
@@ -238,6 +238,12 @@ export function DownloadPage() {
             already-signed-in browser sessions, without juggling profiles or
             shells. Available for macOS and Windows.
           </p>
+          <p className="download-warning">
+            macOS v0.2 is a migration installer: BrowserBridge has been renamed
+            to OpenCLIApp. Existing v0.1 users should download and run the pkg;
+            the installer exits the old app, migrates settings, and removes the
+            old BrowserBridge app bundle.
+          </p>
 
           <div className="download-card">
             {loading ? (
@@ -325,6 +331,8 @@ export function DownloadPage() {
             <li>
               On macOS, double-click to install. The pkg is signed and
               notarized, so Gatekeeper lets it through without right-click → Open.
+              If you have BrowserBridge v0.1 installed, use this pkg to migrate
+              to OpenCLIApp v0.2.
             </li>
             <li>
               On Windows, run the setup exe. The current Windows build is
