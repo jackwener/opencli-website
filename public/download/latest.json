@@ -1,15 +1,11 @@
 {
-  "version": "0.1.33",
-  "notes": "OpenCLIApp 0.1.33",
-  "pub_date": "2026-06-27T10:06:04.000Z",
+  "version": "0.1.34",
+  "notes": "OpenCLIApp 0.1.34 updater smoke",
+  "pub_date": "2026-06-27T12:27:40.666Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSSzJSQ202NXRld2VsY1oySTA3ckQ2WG5EQ1JrZU90UkcrT3pPTkJFS01DSk93bEovSGIwODVYdjVDQWtoTk03SUZnbzBmMy81QityNzlLNHRpblQwNTVOQlcvQmtEekFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgyNTU0MTc2CWZpbGU6T3BlbkNMSUFwcF8wLjEuMzNfYWFyY2g2NC5hcHAudGFyLmd6CjFCaEhuT21XMjQ3V0VWUFRsaGVaTm8ycFRLYVBnTldhYnFZSDFRV05iSEdDc0EvbnMreFJrZmNSSzFoVFI5dFo3U1kwMi9QRW9XdTJFQjdJQTNZTkN3PT0K",
-      "url": "https://github.com/jackwener/opencli-website/releases/download/app-v0.1.33/OpenCLIApp_0.1.33_aarch64.app.tar.gz"
-    },
-    "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSSzJSQ202NXRld1JhY1NHdGt3K1ZGc1B1Vm5MUjQ2REs3Wkk5Qzlid1FMMFJtSnQ3NjBMZDlOL2c2RmpNWURFMkpoRGllMzVnMUMwMHRzLzhUNHZ2SXQyRHIrTjIxNlEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgyNTU0NTY5CWZpbGU6T3BlbkNMSUFwcF8wLjEuMzNfeDY0LXNldHVwLmV4ZQpPalRKSlEzNnh6VXVSSjBJY0tMUCtSZFpOeUdkNGMzNElqZ0FacDJjUU5yai90MTRVYUdzNGRYeVg1U09GcTkwblhTWExSMzl0RXBUUWpFTjQyQzBCQT09Cg==",
-      "url": "https://github.com/jackwener/opencli-website/releases/download/app-v0.1.33/OpenCLIApp_0.1.33_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSSzJSQ202NXRld1FsNEtkN2ppVnpuRW81ZVRoOFFVR096UUNaOEwzdHBocHdmVnAyVUY0M3lYNThSU3dSUWJYSXA1SnNOY0JpMU51aUs1anF4dlMyWi9pSnM2RGtuQWdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgyNTYyMDc2CWZpbGU6T3BlbkNMSUFwcF8wLjEuMzRfYWFyY2g2NC5hcHAudGFyLmd6Ck1xSVJQKzd2ZklXZCt5Q1pHeGtXQWQwRlFUR1NjVXBPaUU0WEMrQUlXZ3VPMWh6Q0crZUY2cFJtMlRTcmViNlJkT1pWRTFDcTVpTFVlQ2RNaWNqNEFBPT0K",
+      "url": "https://github.com/jackwener/opencli-website/releases/download/app-v0.1.34/OpenCLIApp_0.1.34_aarch64.app.tar.gz"
     }
   }
 }
