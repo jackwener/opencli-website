@@ -238,12 +238,6 @@ export function DownloadPage() {
             already-signed-in browser sessions, without juggling profiles or
             shells. Available for macOS and Windows.
           </p>
-          <p className="download-warning">
-            macOS v0.2 is a migration installer: BrowserBridge has been renamed
-            to OpenCLIApp. Existing v0.1 users should download and run the pkg;
-            the installer exits the old app, migrates settings, and removes the
-            old BrowserBridge app bundle.
-          </p>
 
           <div className="download-card">
             {loading ? (
@@ -331,8 +325,6 @@ export function DownloadPage() {
             <li>
               On macOS, double-click to install. The pkg is signed and
               notarized, so Gatekeeper lets it through without right-click → Open.
-              If you have BrowserBridge v0.1 installed, use this pkg to migrate
-              to OpenCLIApp v0.2.
             </li>
             <li>
               On Windows, run the setup exe. The current Windows build is
