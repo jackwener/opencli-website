@@ -1,15 +1,15 @@
 {
-  "version": "0.1.33",
-  "notes": "OpenCLIApp 0.1.33",
-  "pub_date": "2026-06-27T10:06:04.000Z",
+  "version": "0.1.34",
+  "notes": "OpenCLIApp 0.1.34",
+  "pub_date": "2026-06-30T12:59:52.000Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSSzJSQ202NXRld2VsY1oySTA3ckQ2WG5EQ1JrZU90UkcrT3pPTkJFS01DSk93bEovSGIwODVYdjVDQWtoTk03SUZnbzBmMy81QityNzlLNHRpblQwNTVOQlcvQmtEekFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgyNTU0MTc2CWZpbGU6T3BlbkNMSUFwcF8wLjEuMzNfYWFyY2g2NC5hcHAudGFyLmd6CjFCaEhuT21XMjQ3V0VWUFRsaGVaTm8ycFRLYVBnTldhYnFZSDFRV05iSEdDc0EvbnMreFJrZmNSSzFoVFI5dFo3U1kwMi9QRW9XdTJFQjdJQTNZTkN3PT0K",
-      "url": "https://github.com/jackwener/opencli-website/releases/download/app-v0.1.33/OpenCLIApp_0.1.33_aarch64.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSSzJSQ202NXRld1VoaXVPZjZHd3lYMUQyNmM0U2FKaVo5dlpsaVdMM3VOMmRpamhqczM1bDU2cmM2dFltd0VtK1QzZTJ5T2lVVVo1NE5NVUlER2ZnTGZKZy9nM3dPekFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgyODIzNjk3CWZpbGU6T3BlbkNMSUFwcF8wLjEuMzRfYWFyY2g2NC5hcHAudGFyLmd6CjdaY0lvelN4RnE0N3N1eFVvSWI2MWtKakpiNjd5ZnFFblFZUWh1N0JDQkFkMmdPYWVMbUM5N2JLSVoxQlhCMnRKV2c3azhab0lvOFZqYWcyNDRGdEJRPT0K",
+      "url": "https://github.com/jackwener/opencli-website/releases/download/app-v0.1.34/OpenCLIApp_0.1.34_aarch64.app.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSSzJSQ202NXRld1JhY1NHdGt3K1ZGc1B1Vm5MUjQ2REs3Wkk5Qzlid1FMMFJtSnQ3NjBMZDlOL2c2RmpNWURFMkpoRGllMzVnMUMwMHRzLzhUNHZ2SXQyRHIrTjIxNlEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgyNTU0NTY5CWZpbGU6T3BlbkNMSUFwcF8wLjEuMzNfeDY0LXNldHVwLmV4ZQpPalRKSlEzNnh6VXVSSjBJY0tMUCtSZFpOeUdkNGMzNElqZ0FacDJjUU5yai90MTRVYUdzNGRYeVg1U09GcTkwblhTWExSMzl0RXBUUWpFTjQyQzBCQT09Cg==",
-      "url": "https://github.com/jackwener/opencli-website/releases/download/app-v0.1.33/OpenCLIApp_0.1.33_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSSzJSQ202NXRld1NQeWdabk5ldzVqNHZzcngzOEVCdThlVjdCNUxPbDdrTndwaURSUC9HZEgwS0ZZQTNFZFAyYkFVMWp3Mmg0V2JLZEpJTkdDbUI0anZYRTN4K01QdkFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgyODI0MDIxCWZpbGU6T3BlbkNMSUFwcF8wLjEuMzRfeDY0LXNldHVwLmV4ZQoyY0s3Tjc0VHBmMWljYXlocU01RHBlNzRLYWxvUVoycVk4L3JVYmJyTUtPTG1nVDlkU3ZnUlVhak0zRlV1bXI0WnkyYzRFaGpiYkhjZmFobDNycDNDUT09Cg==",
+      "url": "https://github.com/jackwener/opencli-website/releases/download/app-v0.1.34/OpenCLIApp_0.1.34_x64-setup.exe"
     }
   }
 }
