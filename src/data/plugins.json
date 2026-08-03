@@ -46,5 +46,17 @@
     "commands": ["wall", "feed", "search"],
     "tags": ["vk", "vkontakte", "social", "russia"],
     "installCommand": "opencli plugin install github:flobo3/opencli-plugin-vk"
+  },
+  {
+    "name": "opencli-plugin-texpage",
+    "slug": "texpage",
+    "description": "TeXPage online LaTeX editor: list projects, read/write files, compile, download PDF",
+    "author": "dull-bird",
+    "repo": "dull-bird/opencli-plugin-texpage",
+    "type": "TS",
+    "category": "utility",
+    "commands": ["compile", "download", "files", "list", "read", "write"],
+    "tags": ["latex", "tex", "pdf", "compile"],
+    "installCommand": "opencli plugin install github:dull-bird/opencli-plugin-texpage"
   }
 ]
