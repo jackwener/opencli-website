@@ -46,5 +46,17 @@
     "commands": ["wall", "feed", "search"],
     "tags": ["vk", "vkontakte", "social", "russia"],
     "installCommand": "opencli plugin install github:flobo3/opencli-plugin-vk"
+  },
+  {
+    "name": "opencli-plugin-publish",
+    "slug": "publish",
+    "description": "Publish opencli plugins to the opencli.info marketplace (entry generator + PR submitter)",
+    "author": "dull-bird",
+    "repo": "dull-bird/opencli-plugin-publish",
+    "type": "TS",
+    "category": "dev",
+    "commands": ["entry", "submit"],
+    "tags": ["marketplace", "publish", "plugins", "registry"],
+    "installCommand": "opencli plugin install github:dull-bird/opencli-plugin-publish"
   }
 ]
