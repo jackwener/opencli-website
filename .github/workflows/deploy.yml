@@ -62,7 +62,7 @@ jobs:
       # ── Build docs ──
       - name: Install docs dependencies
         working-directory: _opencli
-        run: npm ci
+        run: npm ci --ignore-scripts
 
       - name: Build VitePress docs
         working-directory: _opencli
