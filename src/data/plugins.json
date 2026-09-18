@@ -46,5 +46,17 @@
     "commands": ["wall", "feed", "search"],
     "tags": ["vk", "vkontakte", "social", "russia"],
     "installCommand": "opencli plugin install github:flobo3/opencli-plugin-vk"
+  },
+  {
+    "name": "opencli-plugin-hf-learn",
+    "slug": "hf-learn",
+    "description": "Hugging Face Learn: list courses, full TOC, read chapters as Markdown, list embedded videos, check learner progress & certificates.",
+    "author": "dull-bird",
+    "repo": "dull-bird/opencli-plugin-hf-learn",
+    "type": "TS",
+    "category": "utility",
+    "commands": ["courses", "progress", "read", "toc", "videos"],
+    "tags": ["huggingface", "learn", "courses", "education", "ai"],
+    "installCommand": "opencli plugin install github:dull-bird/opencli-plugin-hf-learn"
   }
 ]
