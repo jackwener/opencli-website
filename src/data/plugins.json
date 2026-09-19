@@ -46,5 +46,17 @@
     "commands": ["wall", "feed", "search"],
     "tags": ["vk", "vkontakte", "social", "russia"],
     "installCommand": "opencli plugin install github:flobo3/opencli-plugin-vk"
+  },
+  {
+    "name": "opencli-plugin-coursera",
+    "slug": "coursera",
+    "description": "Coursera: catalog search, my courses, course info, syllabus dump, progress stats, and subtitle / 720p video / resource download.",
+    "author": "dull-bird",
+    "repo": "dull-bird/opencli-plugin-coursera",
+    "type": "TS",
+    "category": "utility",
+    "commands": ["download", "info", "mycourses", "progress", "search", "syllabus"],
+    "tags": ["coursera", "mooc", "subtitles", "download"],
+    "installCommand": "opencli plugin install github:dull-bird/opencli-plugin-coursera"
   }
 ]
