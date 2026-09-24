@@ -28,7 +28,6 @@ Requires Node.js >= 20 and Chrome with the OpenCLI Browser Bridge extension.
 - Desktop app control — drive Electron apps (Cursor, Codex, ChatGPT App) via CDP
 - Plugin system — install community adapters with `opencli plugin install github:user/repo`
 - AI agent ready — browser primitives give AI agents a repeatable loop for any site interaction
-- CLI hub — unified passthrough for gh, docker, vercel, wrangler, notion, discord, telegram, and more
 
 ## Supported sites (selected)
 

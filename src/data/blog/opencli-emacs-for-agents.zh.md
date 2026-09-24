@@ -255,48 +255,6 @@ opencli operate eval "(function(){
 
 ---
 
-## 五、外部工具统一：Emacs 的 M-x shell 与 OpenCLI 的 CLI Hub
-
-### Emacs 的方式
-
-Emacs 用户很少离开 Emacs。不是因为外面没有好工具，而是因为 Emacs 能把外部工具拉进来：
-
-- `M-x shell` / `M-x eshell`：在 Emacs 里运行 shell
-- `M-x compile`：在 Emacs 里运行编译，错误自动跳转到源码
-- `forge`：在 Emacs 里操作 GitHub PR 和 Issue
-- `dired`：在 Emacs 里管理文件系统
-- `proced`：在 Emacs 里管理系统进程
-
-每个外部工具被集成后，都获得了 Emacs 的超能力：可搜索、可编程、可组合、可录制宏。`git` 不只是 `git`——通过 `magit`，它变成了可交互、可撤销、可脚本化的版本控制界面。
-
-### OpenCLI 的方式
-
-OpenCLI 的 CLI Hub 做了同样的事：
-
-```bash
-# 注册外部 CLI
-opencli register gh          # GitHub CLI
-opencli register docker      # Docker CLI
-opencli register vercel      # Vercel CLI
-
-# 统一发现
-opencli list                 # 列出所有命令，包括内置和外部
-
-# 自动安装
-opencli gh pr list           # 如果 gh 未安装，自动 brew install gh 后执行
-```
-
-外部工具被集成后，Agent 获得的不只是调用能力，而是 OpenCLI 的所有原语：
-
-- **统一输出格式**：`-f json`、`-f table`、`-f csv`——无论是 Bilibili 热搜还是 GitHub PR 列表，输出结构一致
-- **统一发现**：`opencli list` 一条命令列出所有可用工具，Agent 不需要猜有什么可用
-- **统一参数**：`--limit`、`--format`、`--help`——所有命令共享的通用参数
-- **自动安装**：缺少的工具自动通过包管理器安装，Agent 不需要处理 `command not found`
-
-这和 Emacs 的 `compile` 命令何其相似——`gcc` 的输出被 Emacs 解析后，错误不再是一行文本，而是可以直接跳转到源码的超链接。形式的统一带来了组合的自由。
-
----
-
 ## 六、动态加载：保存即生效的即时反馈循环
 
 ### Emacs 的方式
@@ -344,7 +302,6 @@ OpenCLI 的动态加载机制提供了几乎相同的体验：
 | **错误诊断** | `*Messages*` + `toggle-debug-on-error` | `OPENCLI_DIAGNOSTIC=1` + RepairContext JSON |
 | **源码定位** | `M-x find-function` | `adapter.sourcePath` |
 | **就地修复** | 编辑 `.el` + `eval-buffer` | 编辑 `.ts` / `.yaml` + 保存 |
-| **外部工具集成** | `shell` / `compile` / `magit` | CLI Hub + `opencli register` |
 | **输出统一** | 一切皆 buffer + text | 一切皆 JSON / table / csv |
 | **可组合性** | hook + advice + minor-mode | pipeline 步骤 + 命令 chaining |
 | **元编程** | `defmacro` / `eval-expression` | `operate eval` / 自定义 pipeline step |
