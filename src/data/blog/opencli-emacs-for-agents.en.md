@@ -255,49 +255,7 @@ The result of this meta-programmability: **the agent's capability boundary is de
 
 ---
 
-## VI. External Tool Unification: Emacs's M-x shell Meets OpenCLI's CLI Hub
-
-### The Emacs Way
-
-Emacs users rarely leave Emacs. Not because there aren't good external tools, but because Emacs can pull them in:
-
-- `M-x shell` / `M-x eshell`: Run a shell inside Emacs
-- `M-x compile`: Run builds inside Emacs with automatic source-location jumping on errors
-- `forge`: Manage GitHub PRs and Issues inside Emacs
-- `dired`: Manage the filesystem inside Emacs
-- `proced`: Manage system processes inside Emacs
-
-Once integrated, every external tool gains Emacs superpowers: searchable, programmable, composable, macro-recordable. `git` isn't just `git` — through `magit`, it becomes an interactive, undoable, scriptable version control interface.
-
-### The OpenCLI Way
-
-OpenCLI's CLI Hub does the same thing:
-
-```bash
-# Register external CLIs
-opencli register gh          # GitHub CLI
-opencli register docker      # Docker CLI
-opencli register vercel      # Vercel CLI
-
-# Unified discovery
-opencli list                 # List all commands, both built-in and external
-
-# Auto-installation
-opencli gh pr list           # If gh isn't installed, auto-runs brew install gh then executes
-```
-
-Once integrated, agents gain not just invocation capability, but all of OpenCLI's primitives:
-
-- **Unified output format**: `-f json`, `-f table`, `-f csv` — whether it's Bilibili trending or GitHub PR list, the output structure is consistent
-- **Unified discovery**: `opencli list` — one command reveals all available tools; the agent never has to guess what's available
-- **Unified parameters**: `--limit`, `--format`, `--help` — universal arguments shared across all commands
-- **Auto-installation**: Missing tools are automatically installed via the package manager; the agent never has to handle `command not found`
-
-This mirrors Emacs's `compile` command — once `gcc`'s output is parsed by Emacs, errors are no longer lines of text but hyperlinks that jump directly to source locations. Uniformity of form enables freedom of composition.
-
----
-
-## VII. Dynamic Loading: The Save-and-It-Works Feedback Loop
+## VI. Dynamic Loading: The Save-and-It-Works Feedback Loop
 
 ### The Emacs Way
 
@@ -330,7 +288,7 @@ This instant feedback loop is critical for agent self-repair. Imagine if modifyi
 
 ---
 
-## VIII. Summary: Two Programmable Environments, One Isomorphism
+## VII. Summary: Two Programmable Environments, One Isomorphism
 
 | Dimension | Emacs | OpenCLI |
 |-----------|-------|---------|
@@ -344,7 +302,6 @@ This instant feedback loop is critical for agent self-repair. Imagine if modifyi
 | **Error diagnostics** | `*Messages*` + `toggle-debug-on-error` | `OPENCLI_DIAGNOSTIC=1` + RepairContext JSON |
 | **Source location** | `M-x find-function` | `adapter.sourcePath` |
 | **In-place repair** | Edit `.el` + `eval-buffer` | Edit `.ts` / `.yaml` + save |
-| **External tool integration** | `shell` / `compile` / `magit` | CLI Hub + `opencli register` |
 | **Output unification** | Everything is buffer + text | Everything is JSON / table / csv |
 | **Composability** | hook + advice + minor-mode | Pipeline steps + command chaining |
 | **Meta-programming** | `defmacro` / `eval-expression` | `operate eval` / custom pipeline steps |
