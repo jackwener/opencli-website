@@ -39,7 +39,7 @@ export function Features() {
           <span className="section-label">Features</span>
           <h2 className="section-title">Built for power users<br />&amp; AI agents alike</h2>
           <p className="section-desc">
-            A dual-engine architecture that bridges websites and desktop apps into a unified CLI experience.
+            General-purpose browser control and reusable site commands in one CLI.
           </p>
         </div>
         <div className="features-grid">

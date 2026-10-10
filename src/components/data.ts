@@ -94,7 +94,7 @@ export const FEATURES = [
   {
     icon: '🤖',
     title: 'AI Agent Ready',
-    desc: 'Built-in explore, synthesize, and cascade commands. AI discovers APIs and generates adapters automatically.',
+    desc: 'Navigate, inspect page state, click, fill forms, extract, and screenshot with opencli browser. No site adapter required.',
   },
   {
     icon: '🖥️',
@@ -123,8 +123,8 @@ export const FEATURES = [
   },
   {
     icon: '🎬',
-    title: 'Record & Replay',
-    desc: 'Record browser sessions and replay them as CLI commands. Perfect for debugging and creating new adapters.',
+    title: 'Reusable Site Commands',
+    desc: 'Use built-in adapters for recurring tasks, or package a browser workflow as a command with the adapter-author skill.',
   },
   {
     icon: '🪝',
