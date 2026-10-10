@@ -1,52 +1,71 @@
 # OpenCLI
 
-> 把你已登录的浏览器，交给 CLI 和 Agent。
-> OpenCLI reuses your local Chrome login and turns browser work into stable commands for CLI and AI agents.
+> General-purpose browser automation for AI agents, with reusable site commands.
+> An agent-browser alternative: navigate, inspect, click, fill, extract, and screenshot without a site adapter.
 
 ## What OpenCLI does
 
-OpenCLI turns your already logged-in local Chrome browser into a reliable command surface for CLI workflows and AI agents — no tokens, no API keys, no brittle scraping. Three modes:
+OpenCLI gives you one surface for three kinds of automation:
 
-1. **Built-in adapters** — 100+ sites pre-built: Twitter/X, Xiaohongshu, Bilibili, Zhihu, YouTube, LinkedIn, Reddit, HackerNews, and more
-2. **Browser automation for AI agents** — Install the `opencli-browser` skill in Claude Code or Cursor, and the agent can navigate, click, type, extract, and screenshot any page via your logged-in browser
-3. **Adapter authoring** — Write new site adapters end-to-end with `opencli-adapter-author` skill and `opencli browser` primitives
+1. **Built-in adapters** — 100+ sites pre-built with deterministic commands (Twitter/X, Xiaohongshu, Bilibili, Zhihu, LinkedIn, YouTube, Reddit, HackerNews, and more)
+2. **Browser automation for AI agents** — AI agents (Claude Code, Cursor, etc.) can navigate, click, type, fill, extract, and screenshot any page via `opencli browser` primitives and your logged-in Chrome session
+3. **Adapter authoring** — Write new site adapters end-to-end using `opencli-adapter-author` skill + `opencli browser recon/init/verify` workflow
+
+
+## OpenCLI as an agent-browser alternative
+
+OpenCLI supports general-purpose browser workflows without pre-built site adapters. The browser loop is: `opencli browser work open https://example.com`, `opencli browser work state`, then choose actions such as `click`, `fill`, or `extract`. Inspect state again after page changes; release the session with `opencli browser work close`.
+
+Use the same named session across calls. Element references, CLI arguments, outputs, and session lifecycle differ from agent-browser, so migrate and verify existing scripts rather than treating the CLIs as syntax-compatible. Adapters are optional shortcuts for recurring site tasks, not a prerequisite for browsing.
+
+- [OpenCLI vs agent-browser and migration](https://opencli.info/docs/guide/agent-browser-alternative.html)
+- [中文迁移指南](https://opencli.info/docs/zh/guide/agent-browser-alternative.html)
+- [Browser Bridge setup](https://opencli.info/docs/guide/browser-bridge.html)
 
 ## Install
 
-```
+```bash
 npm install -g @jackwener/opencli
+# Install Browser Bridge extension from Chrome Web Store
+# Run: opencli doctor
 ```
 
-Requires Node.js >= 20 and Chrome with the OpenCLI Browser Bridge extension.
+Requires Node.js >= 20.
 
 ## Key capabilities
 
-- Zero LLM cost at runtime — no tokens consumed, run 10,000 times for free
-- Account safe — reuses Chrome's logged-in state, credentials never leave the browser
-- Deterministic — same command, same output schema, every time
-- Pipeable — supports JSON, CSV, Markdown, YAML output formats
-- Desktop app control — drive Electron apps (Cursor, Codex, ChatGPT App) via CDP
-- Plugin system — install community adapters with `opencli plugin install github:user/repo`
-- AI agent ready — browser primitives give AI agents a repeatable loop for any site interaction
-
-## Supported sites (selected)
-
-Twitter/X, Xiaohongshu, Bilibili, Zhihu, LinkedIn, YouTube, Reddit, HackerNews, Weibo, Amazon, Bloomberg, V2EX, Boss直聘, Douyin, Spotify, WeChat articles, Xiaoyuzhou podcasts, NotebookLM, Claude, Gemini, GeoGebra, GitHub Trending (plugin), Juejin (plugin), and 80+ more
-
-Run `opencli list` for the full live registry.
-
-## Desktop app adapters
-
-Cursor, Trae CN, Codex, Antigravity, ChatGPT App, ChatWise, Discord, Doubao, Trae SOLO — controlled via Chrome DevTools Protocol.
+- **No built-in LLM dependency** — commands do not invoke an LLM; an AI agent orchestrating actions has its own model costs
+- **Account safe** — reuses Chrome's logged-in state, credentials never leave the browser
+- **Deterministic adapters** — site commands provide structured output schemas. Pipeable, CI-friendly
+- **Plugin system** — `opencli plugin install github:user/repo`
+- **Multiple output formats** — JSON, CSV, Markdown, YAML, table
 
 ## Skills for AI agents
 
-- `opencli-browser` — navigate, click, type, extract, screenshot any page
-- `opencli-adapter-author` — write new adapters end-to-end
+Install with: `npx skills add jackwener/opencli`
+
+- `opencli-browser` — give AI agents direct browser control (click, type, extract, screenshot)
+- `opencli-adapter-author` — write new adapters from recon to verification
 - `opencli-autofix` — repair broken adapters
 - `opencli-usage` — command and site reference
 
-Install with: `npx skills add jackwener/opencli`
+## Built-in sites (selected)
+
+Twitter/X, Xiaohongshu, Bilibili, Zhihu, LinkedIn, YouTube, Reddit, HackerNews, Weibo, Amazon, Bloomberg, V2EX, Boss直聘, Douyin, Spotify, WeChat, Xiaoyuzhou, NotebookLM, Claude, Gemini, GeoGebra, xueqiu, zlibrary, upwork, 1688, pixiv, and 80+ more.
+
+Full list: https://github.com/jackwener/opencli/blob/main/docs/adapters/index.md
+
+## Configuration
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `OPENCLI_BROWSER_COMMAND_TIMEOUT` | `60` | Seconds to wait for a browser command |
+| `OPENCLI_PROFILE` | — | Browser Bridge profile alias for multi-profile setups |
+| `OPENCLI_VERBOSE` | `false` | Enable verbose logging |
+
+## Exit codes
+
+`0` success · `66` empty result · `69` Browser Bridge down · `75` timeout · `77` auth required · `78` config error · `130` Ctrl-C
 
 ## Key links
 
@@ -54,8 +73,8 @@ Install with: `npx skills add jackwener/opencli`
 - GitHub: https://github.com/jackwener/opencli
 - npm: https://www.npmjs.com/package/@jackwener/opencli
 - Chrome Extension: https://chromewebstore.google.com/detail/opencli/ildkmabpimmkaediidaifkhjpohdnifk
+- Docs: https://opencli.info
 - Plugins: https://opencli.info/plugins
-- Blog: https://opencli.info/blog
 
 ## Author
 
@@ -63,6 +82,7 @@ jackwener — https://github.com/jackwener
 
 ## Related resources
 
-- GitHub repo llms.txt: https://raw.githubusercontent.com/jackwener/opencli/main/llms.txt
-- Full adapter list: https://github.com/jackwener/opencli/blob/main/docs/adapters/index.md
+- Website llms.txt: https://opencli.info/llms.txt
+- Full adapter docs: https://github.com/jackwener/opencli/blob/main/docs/adapters/index.md
 - Extending guide: https://github.com/jackwener/opencli/blob/main/docs/guide/extending-opencli.md
+- Plugin guide: https://github.com/jackwener/opencli/blob/main/docs/guide/plugins.md

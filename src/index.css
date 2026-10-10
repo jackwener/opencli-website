@@ -346,6 +346,13 @@ button {
   animation: fade-in-up 0.8s var(--ease-out-expo) 0.2s both;
 }
 
+.hero-desc a {
+  display: inline-block;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 .hero-actions {
   display: flex;
   align-items: center;

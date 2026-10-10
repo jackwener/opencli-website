@@ -43,3 +43,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://opencli.info/sitemap.xml
+
+Sitemap: https://opencli.info/docs/sitemap.xml

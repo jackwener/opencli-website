@@ -5,20 +5,24 @@ export function Hero() {
       <div className="hero-content">
         <div className="hero-badge">
           <span className="hero-badge-dot" />
-          v{import.meta.env.VITE_OPENCLI_VERSION || '1.0'} — Now with Desktop App Support
+          v{import.meta.env.VITE_OPENCLI_VERSION || '1.0'} — General-purpose Browser Automation
         </div>
         <h1>
-          Hand your logged-in browser
+          Browser automation
           <br />
-          <span className="gradient-text">to the CLI and AI agents</span>
+          <span className="gradient-text">for AI agents</span>
         </h1>
         <p className="hero-desc">
-          OpenCLI reuses your local Chrome's login state, turning web actions into
-          stable commands so the CLI and AI agents can drive the browser you're already logged into.
+          Navigate, click, fill forms, and extract content through your logged-in Chrome.
+          No site adapter required. Add reusable commands when a workflow repeats.
+        </p>
+        <p className="hero-desc">
+          Looking for an agent-browser alternative?{' '}
+          <a href="/docs/guide/agent-browser-alternative.html">Compare workflows and migrate →</a>
         </p>
         <div className="hero-actions">
           <a
-            href="https://www.npmjs.com/package/@jackwener/opencli"
+            href="/docs/guide/getting-started.html"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"
@@ -57,17 +61,20 @@ export function Hero() {
               </div>
               <div className="terminal-line">
                 <span className="terminal-prompt">$</span>
-                <span className="terminal-cmd">opencli bilibili hot --limit 5</span>
+                <span className="terminal-cmd">opencli browser work open https://example.com</span>
               </div>
-              <div className="terminal-output">┌─ Bilibili Hot Videos ──────────────────────┐</div>
-              <div className="terminal-output">│ # │ Title               │ Views    │ Score │</div>
-              <div className="terminal-output">│ 1 │ Hidden coding tips  │ 1.2M     │ 98    │</div>
-              <div className="terminal-output">│ 2 │ Best 2026 OSS picks │ 890K     │ 95    │</div>
-              <div className="terminal-output">└────────────────────────────────────────────┘</div>
+              <div className="terminal-line">
+                <span className="terminal-prompt">$</span>
+                <span className="terminal-cmd">opencli browser work state</span>
+              </div>
+              <div className="terminal-line">
+                <span className="terminal-prompt">$</span>
+                <span className="terminal-cmd">opencli browser work extract</span>
+              </div>
               <div className="terminal-line" style={{ marginTop: '0.5rem' }}>
                 <span className="terminal-prompt">$</span>
-                <span className="terminal-cmd">opencli twitter trending</span>
-                <span className="terminal-comment"> &nbsp;# reuses Chrome login</span>
+                <span className="terminal-cmd">opencli bilibili hot -f json</span>
+                <span className="terminal-comment"> &nbsp;# reusable site command</span>
               </div>
             </div>
           </div>

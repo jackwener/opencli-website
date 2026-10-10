@@ -33,9 +33,9 @@ function StepCard({ num, title, desc, code, delay }: { num: string; title: strin
 function Steps() {
   const steps = [
     { num: '01', title: 'Install', desc: 'One npm command. Works globally, instantly.', code: 'npm i -g @jackwener/opencli' },
-    { num: '02', title: 'Bridge', desc: 'Load the Browser Bridge extension in Chrome. Auto-connects with zero config.', code: 'opencli setup' },
+    { num: '02', title: 'Bridge', desc: 'Load the Browser Bridge extension in Chrome. Auto-connects with zero config.', code: 'opencli doctor' },
     { num: '03', title: 'Login', desc: 'Just browse normally. OpenCLI reuses your existing logged-in sessions.', code: null },
-    { num: '04', title: 'Command', desc: 'Run any supported command. Data flows from your browser to your terminal.', code: 'opencli bilibili hot' },
+    { num: '04', title: 'Browse', desc: 'Open any website and inspect its state. No site adapter needed.', code: 'opencli browser work open https://example.com' },
   ]
 
   return (
@@ -56,7 +56,7 @@ export function HowItWorks() {
           <span className="section-label">How It Works</span>
           <h2 className="section-title">From install to<br />CLI in 60 seconds</h2>
           <p className="section-desc">
-            No tokens. No scraping. Just your browser session, bridged securely to a CLI.
+            Use browser primitives for exploration and reusable site commands for recurring tasks.
           </p>
         </div>
         <Steps />
