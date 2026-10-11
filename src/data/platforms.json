@@ -1,0 +1,2734 @@
+[
+  {
+    "name": "Band",
+    "mode": "browser",
+    "category": [
+      "social"
+    ],
+    "commands": [
+      "bands",
+      "mentions",
+      "post",
+      "posts"
+    ]
+  },
+  {
+    "name": "Bluesky",
+    "mode": "public",
+    "category": [
+      "social"
+    ],
+    "commands": [
+      "feeds",
+      "followers",
+      "following",
+      "profile",
+      "search",
+      "starter-packs",
+      "thread",
+      "trending",
+      "user"
+    ]
+  },
+  {
+    "name": "Discord",
+    "mode": "desktop",
+    "category": [
+      "social",
+      "desktop"
+    ],
+    "commands": [
+      "status",
+      "send",
+      "read",
+      "channels",
+      "servers",
+      "search",
+      "members"
+    ]
+  },
+  {
+    "name": "Douyin",
+    "mode": "browser",
+    "category": [
+      "social",
+      "chinese"
+    ],
+    "commands": [
+      "activities",
+      "collections",
+      "delete",
+      "draft",
+      "drafts",
+      "hashtag",
+      "location",
+      "profile",
+      "publish",
+      "search",
+      "stats",
+      "update",
+      "user-videos",
+      "videos"
+    ]
+  },
+  {
+    "name": "Dribbble",
+    "mode": "browser",
+    "category": [
+      "social"
+    ],
+    "commands": [
+      "collection",
+      "designer",
+      "member",
+      "portfolio",
+      "profile",
+      "service",
+      "shot",
+      "shot-detail"
+    ]
+  },
+  {
+    "name": "Facebook",
+    "mode": "browser",
+    "category": [
+      "social"
+    ],
+    "commands": [
+      "add-friend",
+      "events",
+      "feed",
+      "friends",
+      "groups",
+      "join-group",
+      "marketplace-inbox",
+      "marketplace-listings",
+      "memories",
+      "notifications",
+      "profile",
+      "search"
+    ]
+  },
+  {
+    "name": "HLTV",
+    "mode": "browser",
+    "category": [
+      "social"
+    ],
+    "commands": [
+      "event-matches",
+      "match-map",
+      "match-series",
+      "player-duel",
+      "player-form",
+      "player-map-pool",
+      "player-matches",
+      "player-summary",
+      "player-teammate-impact",
+      "player-vs-team",
+      "search",
+      "team-map-pool",
+      "team-matches"
+    ]
+  },
+  {
+    "name": "Instagram",
+    "mode": "browser",
+    "category": [
+      "social"
+    ],
+    "commands": [
+      "collection-create",
+      "collection-delete",
+      "comment",
+      "download",
+      "explore",
+      "follow",
+      "followers",
+      "following",
+      "like",
+      "note",
+      "post",
+      "profile",
+      "reel",
+      "save",
+      "saved",
+      "search",
+      "story",
+      "unfollow",
+      "unlike",
+      "unsave",
+      "user"
+    ]
+  },
+  {
+    "name": "LinkedIn",
+    "mode": "browser",
+    "category": [
+      "social"
+    ],
+    "commands": [
+      "company",
+      "connect",
+      "connections",
+      "inbox",
+      "job-detail",
+      "jobs-preferences",
+      "people-search",
+      "post-analytics",
+      "posts",
+      "profile-analytics",
+      "profile-experience",
+      "profile-projects",
+      "profile-read",
+      "safe-send",
+      "salesnav-inbox",
+      "salesnav-message",
+      "salesnav-search",
+      "salesnav-thread",
+      "search",
+      "sent-invitations",
+      "services-read",
+      "thread-snapshot",
+      "timeline"
+    ]
+  },
+  {
+    "name": "Maimai",
+    "mode": "browser",
+    "category": [
+      "social",
+      "chinese"
+    ],
+    "commands": [
+      "search-talents"
+    ]
+  },
+  {
+    "name": "Pinterest",
+    "mode": "browser",
+    "category": [
+      "social"
+    ],
+    "commands": [
+      "board-create",
+      "board-delete",
+      "board-pins",
+      "board-section-create",
+      "board-section-delete",
+      "board-sections",
+      "board-update",
+      "download",
+      "pin",
+      "pin-create",
+      "pin-delete",
+      "pin-update",
+      "save",
+      "search-boards",
+      "search-pins",
+      "search-users",
+      "user",
+      "user-boards",
+      "user-pins"
+    ]
+  },
+  {
+    "name": "Pixiv",
+    "mode": "browser",
+    "category": [
+      "social"
+    ],
+    "commands": [
+      "bookmark-download",
+      "bookmarks",
+      "detail",
+      "download",
+      "illusts",
+      "me",
+      "novel",
+      "novel-download",
+      "novels",
+      "ranking",
+      "search",
+      "user"
+    ]
+  },
+  {
+    "name": "Reddit",
+    "mode": "browser",
+    "category": [
+      "social"
+    ],
+    "commands": [
+      "comment",
+      "frontpage",
+      "home",
+      "hot",
+      "popular",
+      "read",
+      "reply",
+      "save",
+      "saved",
+      "search",
+      "subreddit",
+      "subreddit-info",
+      "subscribe",
+      "subscribed",
+      "upvote",
+      "upvoted",
+      "user",
+      "user-comments",
+      "user-posts"
+    ]
+  },
+  {
+    "name": "RedNote",
+    "mode": "browser",
+    "category": [
+      "social",
+      "chinese"
+    ],
+    "commands": [
+      "comments",
+      "download",
+      "feed",
+      "note",
+      "notifications",
+      "search",
+      "user"
+    ]
+  },
+  {
+    "name": "Spotify",
+    "mode": "public",
+    "category": [
+      "social"
+    ],
+    "commands": [
+      "auth",
+      "next",
+      "pause",
+      "play",
+      "prev",
+      "queue",
+      "repeat",
+      "search",
+      "shuffle",
+      "status",
+      "volume"
+    ]
+  },
+  {
+    "name": "Steam",
+    "mode": "public",
+    "category": [
+      "social"
+    ],
+    "commands": [
+      "app",
+      "search",
+      "top-sellers"
+    ]
+  },
+  {
+    "name": "TikTok",
+    "mode": "browser",
+    "category": [
+      "social"
+    ],
+    "commands": [
+      "comment",
+      "creator-videos",
+      "explore",
+      "follow",
+      "following",
+      "friends",
+      "like",
+      "live",
+      "notifications",
+      "profile",
+      "save",
+      "search",
+      "unfollow",
+      "unlike",
+      "unsave",
+      "user"
+    ]
+  },
+  {
+    "name": "Twitter / X",
+    "mode": "browser",
+    "category": [
+      "social"
+    ],
+    "commands": [
+      "accept",
+      "article",
+      "block",
+      "bookmark",
+      "bookmark-folder",
+      "bookmark-folders",
+      "bookmarks",
+      "collection",
+      "delete",
+      "device-follow",
+      "download",
+      "follow",
+      "follow-batch",
+      "followers",
+      "following",
+      "hide-reply",
+      "like",
+      "likes",
+      "list-add",
+      "list-add-batch",
+      "list-create",
+      "list-delete",
+      "list-remove",
+      "list-remove-batch",
+      "list-tweets",
+      "lists",
+      "mute-word",
+      "notifications",
+      "post",
+      "profile",
+      "quote",
+      "reply",
+      "reply-dm",
+      "retweet",
+      "search",
+      "thread",
+      "timeline",
+      "trending",
+      "tweets",
+      "unblock",
+      "unbookmark",
+      "unfollow",
+      "unlike",
+      "unretweet"
+    ]
+  },
+  {
+    "name": "YouTube",
+    "mode": "browser",
+    "category": [
+      "social"
+    ],
+    "commands": [
+      "channel",
+      "comments",
+      "feed",
+      "history",
+      "like",
+      "playlist",
+      "search",
+      "subscribe",
+      "subscriptions",
+      "transcript",
+      "unlike",
+      "unsubscribe",
+      "video",
+      "watch-later"
+    ]
+  },
+  {
+    "name": "12306",
+    "mode": "public",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "me",
+      "orders",
+      "passengers",
+      "price",
+      "stations",
+      "train",
+      "trains"
+    ]
+  },
+  {
+    "name": "1688",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "assets",
+      "download",
+      "item",
+      "search",
+      "store"
+    ]
+  },
+  {
+    "name": "1Point3Acres",
+    "mode": "public",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "digest",
+      "forum",
+      "forums",
+      "hot",
+      "latest",
+      "notifications",
+      "search",
+      "thread",
+      "user"
+    ]
+  },
+  {
+    "name": "36Kr",
+    "mode": "public",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "article",
+      "hot",
+      "news",
+      "search"
+    ]
+  },
+  {
+    "name": "51Job",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "company",
+      "detail",
+      "hot",
+      "search"
+    ]
+  },
+  {
+    "name": "Autohome",
+    "mode": "public",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "brand",
+      "score"
+    ]
+  },
+  {
+    "name": "Baidu Scholar",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "search"
+    ]
+  },
+  {
+    "name": "Baidu Tieba",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "hot",
+      "posts",
+      "read",
+      "search"
+    ]
+  },
+  {
+    "name": "Beike",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "chengjiao",
+      "ershoufang",
+      "xiaoqu",
+      "zufang"
+    ]
+  },
+  {
+    "name": "BOSS Zhipin",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "batchgreet",
+      "chatlist",
+      "chatmsg",
+      "detail",
+      "exchange",
+      "greet",
+      "invite",
+      "joblist",
+      "mark",
+      "recommend",
+      "resume",
+      "search",
+      "send",
+      "stats"
+    ]
+  },
+  {
+    "name": "Chaoxing",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "assignments",
+      "exams"
+    ]
+  },
+  {
+    "name": "CNKI",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "search"
+    ]
+  },
+  {
+    "name": "Coupang",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "add-to-cart",
+      "product",
+      "search"
+    ]
+  },
+  {
+    "name": "Ctrip",
+    "mode": "public",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "attraction",
+      "bus",
+      "cruise",
+      "ferry",
+      "flight",
+      "flight-round",
+      "hotel",
+      "hotel-search",
+      "hotel-suggest",
+      "package",
+      "search",
+      "tour",
+      "train"
+    ]
+  },
+  {
+    "name": "Dianping",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "search",
+      "shop"
+    ]
+  },
+  {
+    "name": "Dongchedi",
+    "mode": "public",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "koubei",
+      "models",
+      "score",
+      "search",
+      "series",
+      "specs"
+    ]
+  },
+  {
+    "name": "Douban",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "book-hot",
+      "download",
+      "marks",
+      "movie-hot",
+      "photos",
+      "reviews",
+      "search",
+      "subject",
+      "top250"
+    ]
+  },
+  {
+    "name": "Guazi",
+    "mode": "public",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "browse",
+      "car"
+    ]
+  },
+  {
+    "name": "Huodongxing",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "events"
+    ]
+  },
+  {
+    "name": "Hupu",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "detail",
+      "hot",
+      "like",
+      "mentions",
+      "reply",
+      "search",
+      "unlike"
+    ]
+  },
+  {
+    "name": "JD.com",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "add-cart",
+      "cart",
+      "detail",
+      "item",
+      "reviews",
+      "search"
+    ]
+  },
+  {
+    "name": "Jianyu",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "detail",
+      "search"
+    ]
+  },
+  {
+    "name": "Jike",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "comment",
+      "create",
+      "feed",
+      "like",
+      "notifications",
+      "post",
+      "repost",
+      "search",
+      "topic",
+      "user"
+    ]
+  },
+  {
+    "name": "Juejin",
+    "mode": "public",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "hot",
+      "recommend"
+    ]
+  },
+  {
+    "name": "Linux.do",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "categories",
+      "feed",
+      "search",
+      "tags",
+      "topic",
+      "topic-content",
+      "user-posts",
+      "user-topics"
+    ]
+  },
+  {
+    "name": "Mubu",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "doc",
+      "docs",
+      "notes",
+      "recent",
+      "search"
+    ]
+  },
+  {
+    "name": "Nowcoder",
+    "mode": "public",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "companies",
+      "creators",
+      "detail",
+      "experience",
+      "hot",
+      "jobs",
+      "notifications",
+      "papers",
+      "practice",
+      "recommend",
+      "referral",
+      "salary",
+      "search",
+      "suggest",
+      "topics",
+      "trending"
+    ]
+  },
+  {
+    "name": "PowerChina",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "search"
+    ]
+  },
+  {
+    "name": "Quark",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "ls",
+      "mkdir",
+      "mv",
+      "rename",
+      "rm",
+      "save",
+      "share-tree"
+    ]
+  },
+  {
+    "name": "Sina Blog",
+    "mode": "public",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "article",
+      "hot",
+      "search",
+      "user"
+    ]
+  },
+  {
+    "name": "SMZDM",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "search"
+    ]
+  },
+  {
+    "name": "Taobao",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "add-cart",
+      "cart",
+      "detail",
+      "reviews",
+      "search"
+    ]
+  },
+  {
+    "name": "Toutiao",
+    "mode": "public",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "articles",
+      "hot",
+      "recommend"
+    ]
+  },
+  {
+    "name": "UISDC",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "news"
+    ]
+  },
+  {
+    "name": "V2EX",
+    "mode": "public",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "daily",
+      "hot",
+      "latest",
+      "me",
+      "member",
+      "node",
+      "nodes",
+      "notifications",
+      "replies",
+      "topic",
+      "user"
+    ]
+  },
+  {
+    "name": "Wanfang",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "search"
+    ]
+  },
+  {
+    "name": "WeChat",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "create-draft",
+      "download",
+      "drafts",
+      "search"
+    ]
+  },
+  {
+    "name": "WeChat Channels",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "publish"
+    ]
+  },
+  {
+    "name": "Weibo",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "comments",
+      "delete",
+      "favorites",
+      "feed",
+      "hot",
+      "me",
+      "post",
+      "publish",
+      "search",
+      "user",
+      "user-posts"
+    ]
+  },
+  {
+    "name": "WeRead",
+    "mode": "public",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "ai-outline",
+      "book",
+      "book-search",
+      "highlights",
+      "notebooks",
+      "notes",
+      "ranking",
+      "search",
+      "shelf"
+    ]
+  },
+  {
+    "name": "WeRead (official)",
+    "mode": "public",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "book",
+      "discover",
+      "list-apis",
+      "notes",
+      "readdata",
+      "review",
+      "search",
+      "shelf"
+    ]
+  },
+  {
+    "name": "Xianyu",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "chat",
+      "inbox",
+      "item",
+      "messages",
+      "publish",
+      "reply",
+      "search"
+    ]
+  },
+  {
+    "name": "Xiaoe",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "catalog",
+      "content",
+      "courses",
+      "detail",
+      "play-url"
+    ]
+  },
+  {
+    "name": "Xiaohongshu",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "ask",
+      "comments",
+      "creator-note-detail",
+      "creator-notes",
+      "creator-notes-summary",
+      "creator-profile",
+      "creator-stats",
+      "delete-note",
+      "download",
+      "draft-clear",
+      "draft-delete",
+      "draft-open",
+      "drafts",
+      "feed",
+      "follow",
+      "liked",
+      "note",
+      "notifications",
+      "publish",
+      "saved",
+      "search",
+      "unfollow",
+      "user"
+    ]
+  },
+  {
+    "name": "Xiaoyuzhou",
+    "mode": "public",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "download",
+      "episode",
+      "history",
+      "podcast",
+      "podcast-episodes",
+      "transcript"
+    ]
+  },
+  {
+    "name": "Youdao",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "note"
+    ]
+  },
+  {
+    "name": "Zhihu",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "answer",
+      "answer-comments",
+      "answer-detail",
+      "collection",
+      "collections",
+      "comment",
+      "download",
+      "favorite",
+      "follow",
+      "followers",
+      "following",
+      "hot",
+      "like",
+      "pins",
+      "question",
+      "recommend",
+      "search",
+      "user",
+      "user-answers",
+      "user-articles"
+    ]
+  },
+  {
+    "name": "ZSXQ",
+    "mode": "browser",
+    "category": [
+      "chinese"
+    ],
+    "commands": [
+      "dynamics",
+      "groups",
+      "search",
+      "topic",
+      "topics"
+    ]
+  },
+  {
+    "name": "ArXiv",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "author",
+      "paper",
+      "recent",
+      "search"
+    ]
+  },
+  {
+    "name": "Confluence",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "create",
+      "page",
+      "search",
+      "update"
+    ]
+  },
+  {
+    "name": "crates.io",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "crate",
+      "search"
+    ]
+  },
+  {
+    "name": "DBLP",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "author",
+      "paper",
+      "search",
+      "venue"
+    ]
+  },
+  {
+    "name": "Dev.to",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "latest",
+      "read",
+      "tag",
+      "top",
+      "user"
+    ]
+  },
+  {
+    "name": "Docker Hub",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "image",
+      "search"
+    ]
+  },
+  {
+    "name": "endoflife.date",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "product"
+    ]
+  },
+  {
+    "name": "Flathub",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "app",
+      "search"
+    ]
+  },
+  {
+    "name": "Gitee",
+    "mode": "browser",
+    "category": [
+      "dev",
+      "chinese"
+    ],
+    "commands": [
+      "search",
+      "trending",
+      "user"
+    ]
+  },
+  {
+    "name": "GitHub",
+    "mode": "browser",
+    "category": [
+      "dev"
+    ],
+    "commands": []
+  },
+  {
+    "name": "GitHub Trending",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "repos"
+    ]
+  },
+  {
+    "name": "Google Scholar",
+    "mode": "browser",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "cite",
+      "profile",
+      "search"
+    ]
+  },
+  {
+    "name": "GoProxy",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "module",
+      "versions"
+    ]
+  },
+  {
+    "name": "Hacker News",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "ask",
+      "best",
+      "jobs",
+      "new",
+      "read",
+      "search",
+      "show",
+      "top",
+      "user"
+    ]
+  },
+  {
+    "name": "Homebrew",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "cask",
+      "formula",
+      "popular"
+    ]
+  },
+  {
+    "name": "HuggingFace",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "datasets",
+      "models",
+      "paper",
+      "spaces",
+      "top"
+    ]
+  },
+  {
+    "name": "Jira",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "attachments",
+      "comments",
+      "issue",
+      "links",
+      "search"
+    ]
+  },
+  {
+    "name": "LessWrong",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "comments",
+      "curated",
+      "frontpage",
+      "new",
+      "read",
+      "sequences",
+      "shortform",
+      "tag",
+      "tags",
+      "top",
+      "top-month",
+      "top-week",
+      "top-year",
+      "user",
+      "user-posts"
+    ]
+  },
+  {
+    "name": "Lobsters",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "active",
+      "domain",
+      "hot",
+      "newest",
+      "read",
+      "tag"
+    ]
+  },
+  {
+    "name": "Maven Central",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "artifact",
+      "search"
+    ]
+  },
+  {
+    "name": "MDN",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "search"
+    ]
+  },
+  {
+    "name": "Medium",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "feed",
+      "search",
+      "tag",
+      "user"
+    ]
+  },
+  {
+    "name": "npm",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "downloads",
+      "package",
+      "search"
+    ]
+  },
+  {
+    "name": "NuGet",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "package",
+      "search"
+    ]
+  },
+  {
+    "name": "NVD",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "cve"
+    ]
+  },
+  {
+    "name": "OEIS",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "search",
+      "sequence"
+    ]
+  },
+  {
+    "name": "ONES",
+    "mode": "browser",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "logout",
+      "me",
+      "my-tasks",
+      "task",
+      "tasks",
+      "token-info",
+      "worklog"
+    ]
+  },
+  {
+    "name": "OpenAlex",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "search",
+      "work"
+    ]
+  },
+  {
+    "name": "OpenReview",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "author",
+      "paper",
+      "reviews",
+      "search",
+      "venue"
+    ]
+  },
+  {
+    "name": "OSV",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "query",
+      "vulnerability"
+    ]
+  },
+  {
+    "name": "Packagist",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "package",
+      "search"
+    ]
+  },
+  {
+    "name": "PaperReview",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "feedback",
+      "review",
+      "submit"
+    ]
+  },
+  {
+    "name": "Product Hunt",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "browse",
+      "hot",
+      "posts",
+      "today"
+    ]
+  },
+  {
+    "name": "PubMed",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "article",
+      "author",
+      "citations",
+      "clinical-trial",
+      "journal",
+      "mesh",
+      "related",
+      "review",
+      "search"
+    ]
+  },
+  {
+    "name": "PyPI",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "downloads",
+      "package"
+    ]
+  },
+  {
+    "name": "RFC",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "rfc"
+    ]
+  },
+  {
+    "name": "RubyGems",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "gem",
+      "search"
+    ]
+  },
+  {
+    "name": "Semantic Scholar",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "citations",
+      "paper",
+      "recommendations",
+      "search"
+    ]
+  },
+  {
+    "name": "StackOverflow",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "bounties",
+      "hot",
+      "read",
+      "related",
+      "search",
+      "tag",
+      "unanswered",
+      "user"
+    ]
+  },
+  {
+    "name": "Substack",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "feed",
+      "publication",
+      "search"
+    ]
+  },
+  {
+    "name": "Uiverse",
+    "mode": "browser",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "code",
+      "preview"
+    ]
+  },
+  {
+    "name": "Wikidata",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "entity",
+      "search"
+    ]
+  },
+  {
+    "name": "Wikipedia",
+    "mode": "public",
+    "category": [
+      "dev"
+    ],
+    "commands": [
+      "page",
+      "random",
+      "search",
+      "summary",
+      "trending"
+    ]
+  },
+  {
+    "name": "AIbase",
+    "mode": "browser",
+    "category": [
+      "ai"
+    ],
+    "commands": [
+      "news"
+    ]
+  },
+  {
+    "name": "ChatGPT",
+    "mode": "desktop",
+    "category": [
+      "ai",
+      "desktop"
+    ],
+    "commands": [
+      "status",
+      "new",
+      "send",
+      "read",
+      "ask"
+    ]
+  },
+  {
+    "name": "ChatGPT (web)",
+    "mode": "browser",
+    "category": [
+      "ai"
+    ],
+    "commands": [
+      "ask",
+      "deep-research-result",
+      "detail",
+      "history",
+      "image",
+      "model",
+      "new",
+      "project-file-add",
+      "project-list",
+      "read",
+      "send",
+      "status"
+    ]
+  },
+  {
+    "name": "ChatWise",
+    "mode": "desktop",
+    "category": [
+      "ai",
+      "desktop"
+    ],
+    "commands": [
+      "ask",
+      "send",
+      "read",
+      "new",
+      "model",
+      "history",
+      "export",
+      "status"
+    ]
+  },
+  {
+    "name": "Claude",
+    "mode": "browser",
+    "category": [
+      "ai"
+    ],
+    "commands": [
+      "ask",
+      "detail",
+      "history",
+      "new",
+      "read",
+      "send",
+      "status"
+    ]
+  },
+  {
+    "name": "Codex",
+    "mode": "desktop",
+    "category": [
+      "ai",
+      "desktop"
+    ],
+    "commands": [
+      "status",
+      "send",
+      "read",
+      "new",
+      "extract-diff",
+      "model",
+      "ask",
+      "history"
+    ]
+  },
+  {
+    "name": "Cursor",
+    "mode": "desktop",
+    "category": [
+      "ai",
+      "desktop"
+    ],
+    "commands": [
+      "status",
+      "send",
+      "read",
+      "new",
+      "composer",
+      "model",
+      "ask",
+      "screenshot"
+    ]
+  },
+  {
+    "name": "DeepSeek",
+    "mode": "browser",
+    "category": [
+      "ai"
+    ],
+    "commands": [
+      "ask",
+      "detail",
+      "history",
+      "new",
+      "read",
+      "send",
+      "status",
+      "usage"
+    ]
+  },
+  {
+    "name": "Doubao",
+    "mode": "browser",
+    "category": [
+      "ai",
+      "chinese"
+    ],
+    "commands": [
+      "ask",
+      "detail",
+      "history",
+      "meeting-summary",
+      "meeting-transcript",
+      "new",
+      "read",
+      "send",
+      "status"
+    ]
+  },
+  {
+    "name": "Doubao App",
+    "mode": "desktop",
+    "category": [
+      "ai",
+      "desktop",
+      "chinese"
+    ],
+    "commands": [
+      "ask",
+      "new",
+      "read",
+      "send",
+      "screenshot",
+      "status"
+    ]
+  },
+  {
+    "name": "Gemini",
+    "mode": "browser",
+    "category": [
+      "ai"
+    ],
+    "commands": [
+      "ask",
+      "deep-research",
+      "deep-research-result",
+      "detail",
+      "history",
+      "image",
+      "models",
+      "new",
+      "read",
+      "status"
+    ]
+  },
+  {
+    "name": "Grok",
+    "mode": "browser",
+    "category": [
+      "ai"
+    ],
+    "commands": [
+      "ask",
+      "delete",
+      "detail",
+      "export",
+      "export-all",
+      "history",
+      "image",
+      "new",
+      "pin",
+      "read",
+      "send",
+      "status",
+      "unpin"
+    ]
+  },
+  {
+    "name": "Jimeng",
+    "mode": "browser",
+    "category": [
+      "ai",
+      "chinese"
+    ],
+    "commands": [
+      "generate",
+      "history",
+      "new",
+      "workspaces"
+    ]
+  },
+  {
+    "name": "Kimi",
+    "mode": "browser",
+    "category": [
+      "ai"
+    ],
+    "commands": [
+      "account",
+      "ask",
+      "cookies",
+      "copy-message",
+      "detail",
+      "dismiss-banner",
+      "history",
+      "history-rename",
+      "idb-list",
+      "mode",
+      "model",
+      "new",
+      "react",
+      "read",
+      "regenerate",
+      "send",
+      "settings",
+      "share",
+      "sidebar-toggle",
+      "sign-out",
+      "status",
+      "storage-get",
+      "storage-keys",
+      "templates",
+      "upgrade",
+      "usage",
+      "view-all-history"
+    ]
+  },
+  {
+    "name": "Manus",
+    "mode": "browser",
+    "category": [
+      "ai"
+    ],
+    "commands": [
+      "connectors",
+      "credits",
+      "list",
+      "read",
+      "skills",
+      "status"
+    ]
+  },
+  {
+    "name": "Midjourney",
+    "mode": "browser",
+    "category": [
+      "ai"
+    ],
+    "commands": [
+      "action",
+      "describe",
+      "download",
+      "generate",
+      "history",
+      "quota",
+      "settings",
+      "status"
+    ]
+  },
+  {
+    "name": "MiniMax",
+    "mode": "public",
+    "category": [
+      "ai"
+    ],
+    "commands": [
+      "music"
+    ]
+  },
+  {
+    "name": "NotebookLM",
+    "mode": "browser",
+    "category": [
+      "ai"
+    ],
+    "commands": [
+      "add-source",
+      "create",
+      "current",
+      "generate-audio",
+      "generate-slides",
+      "get",
+      "history",
+      "list",
+      "note-list",
+      "notes-get",
+      "open",
+      "source-fulltext",
+      "source-get",
+      "source-guide",
+      "source-list",
+      "status",
+      "summary",
+      "write-note"
+    ]
+  },
+  {
+    "name": "Notion",
+    "mode": "desktop",
+    "category": [
+      "ai",
+      "desktop"
+    ],
+    "commands": [
+      "status",
+      "search",
+      "read",
+      "new",
+      "write",
+      "sidebar",
+      "favorites",
+      "export"
+    ]
+  },
+  {
+    "name": "Qwen",
+    "mode": "browser",
+    "category": [
+      "ai",
+      "chinese"
+    ],
+    "commands": [
+      "ask",
+      "detail",
+      "history",
+      "image",
+      "new",
+      "read",
+      "send",
+      "status"
+    ]
+  },
+  {
+    "name": "Slock",
+    "mode": "browser",
+    "category": [
+      "ai"
+    ],
+    "commands": [
+      "attachment-download",
+      "attachment-upload",
+      "attachment-url",
+      "bookmark-add",
+      "bookmark-list",
+      "bookmark-remove",
+      "channel-archive",
+      "channel-create",
+      "channel-files",
+      "channel-info",
+      "channel-join",
+      "channel-leave",
+      "channel-list",
+      "channel-mark",
+      "channel-members",
+      "channel-unarchive",
+      "dm-list",
+      "inbox",
+      "inbox-done",
+      "inbox-read-all",
+      "message-read",
+      "message-search",
+      "message-send",
+      "reaction-add",
+      "reaction-remove",
+      "server-list",
+      "server-use",
+      "task-claim",
+      "task-convert",
+      "task-create",
+      "task-delete",
+      "task-get",
+      "task-list",
+      "task-list-server",
+      "task-status",
+      "task-unclaim",
+      "thread-done",
+      "thread-follow",
+      "thread-list",
+      "thread-undone",
+      "thread-unfollow",
+      "unread-summary"
+    ]
+  },
+  {
+    "name": "Suno",
+    "mode": "browser",
+    "category": [
+      "ai"
+    ],
+    "commands": [
+      "download",
+      "generate",
+      "list",
+      "status"
+    ]
+  },
+  {
+    "name": "Yollomi",
+    "mode": "public",
+    "category": [
+      "ai"
+    ],
+    "commands": [
+      "background",
+      "edit",
+      "face-swap",
+      "generate",
+      "models",
+      "object-remover",
+      "remove-bg",
+      "restore",
+      "try-on",
+      "upload",
+      "upscale",
+      "video"
+    ]
+  },
+  {
+    "name": "Yuanbao",
+    "mode": "browser",
+    "category": [
+      "ai",
+      "chinese"
+    ],
+    "commands": [
+      "ask",
+      "detail",
+      "history",
+      "new",
+      "read",
+      "send",
+      "status"
+    ]
+  },
+  {
+    "name": "Barchart",
+    "mode": "browser",
+    "category": [
+      "finance"
+    ],
+    "commands": [
+      "flow",
+      "greeks",
+      "options",
+      "quote"
+    ]
+  },
+  {
+    "name": "Binance",
+    "mode": "public",
+    "category": [
+      "finance"
+    ],
+    "commands": [
+      "asks",
+      "depth",
+      "gainers",
+      "klines",
+      "losers",
+      "pairs",
+      "price",
+      "prices",
+      "ticker",
+      "top",
+      "trades"
+    ]
+  },
+  {
+    "name": "Bloomberg",
+    "mode": "public",
+    "category": [
+      "finance"
+    ],
+    "commands": [
+      "businessweek",
+      "crypto",
+      "economics",
+      "feeds",
+      "green",
+      "industries",
+      "main",
+      "markets",
+      "news",
+      "opinions",
+      "politics",
+      "pursuits",
+      "tech"
+    ]
+  },
+  {
+    "name": "CoinGecko",
+    "mode": "public",
+    "category": [
+      "finance"
+    ],
+    "commands": [
+      "categories",
+      "coin",
+      "derivatives",
+      "exchanges",
+      "global",
+      "top",
+      "trending"
+    ]
+  },
+  {
+    "name": "DefiLlama",
+    "mode": "public",
+    "category": [
+      "finance"
+    ],
+    "commands": [
+      "protocol",
+      "protocols"
+    ]
+  },
+  {
+    "name": "Eastmoney",
+    "mode": "public",
+    "category": [
+      "finance",
+      "chinese"
+    ],
+    "commands": [
+      "announcement",
+      "convertible",
+      "etf",
+      "holders",
+      "hot-rank",
+      "index-board",
+      "kline",
+      "kuaixun",
+      "longhu",
+      "money-flow",
+      "northbound",
+      "quote",
+      "rank",
+      "sectors"
+    ]
+  },
+  {
+    "name": "Mercury",
+    "mode": "public",
+    "category": [
+      "finance"
+    ],
+    "commands": [
+      "check-login",
+      "reimbursement-draft",
+      "reimbursement-plan"
+    ]
+  },
+  {
+    "name": "Sina Finance",
+    "mode": "public",
+    "category": [
+      "finance",
+      "chinese"
+    ],
+    "commands": [
+      "news",
+      "rolling-news",
+      "stock",
+      "stock-rank"
+    ]
+  },
+  {
+    "name": "TDX",
+    "mode": "browser",
+    "category": [
+      "finance",
+      "chinese"
+    ],
+    "commands": [
+      "hot-rank"
+    ]
+  },
+  {
+    "name": "THS",
+    "mode": "public",
+    "category": [
+      "finance",
+      "chinese"
+    ],
+    "commands": [
+      "hot-rank"
+    ]
+  },
+  {
+    "name": "Xueqiu",
+    "mode": "browser",
+    "category": [
+      "finance",
+      "chinese"
+    ],
+    "commands": [
+      "comments",
+      "earnings-date",
+      "feed",
+      "fund-holdings",
+      "fund-snapshot",
+      "groups",
+      "hot",
+      "hot-stock",
+      "kline",
+      "search",
+      "stock",
+      "watchlist"
+    ]
+  },
+  {
+    "name": "Yahoo Finance",
+    "mode": "browser",
+    "category": [
+      "finance"
+    ],
+    "commands": [
+      "quote"
+    ]
+  },
+  {
+    "name": "Amazon",
+    "mode": "browser",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "bestsellers",
+      "discussion",
+      "movers-shakers",
+      "new-releases",
+      "offer",
+      "product",
+      "search"
+    ]
+  },
+  {
+    "name": "Apple Podcasts",
+    "mode": "public",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "episodes",
+      "search",
+      "top"
+    ]
+  },
+  {
+    "name": "BBC",
+    "mode": "public",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "news",
+      "topic"
+    ]
+  },
+  {
+    "name": "Bilibili",
+    "mode": "browser",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "comment",
+      "comments",
+      "creator-stats",
+      "download",
+      "dynamic",
+      "favorite",
+      "feed",
+      "feed-detail",
+      "follow",
+      "following",
+      "history",
+      "hot",
+      "me",
+      "ranking",
+      "search",
+      "subtitle",
+      "summary",
+      "unfollow",
+      "user-videos",
+      "video"
+    ]
+  },
+  {
+    "name": "Booking.com",
+    "mode": "browser",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "search"
+    ]
+  },
+  {
+    "name": "Brave Search",
+    "mode": "browser",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "search"
+    ]
+  },
+  {
+    "name": "Chess.com",
+    "mode": "public",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "analyze",
+      "game",
+      "games",
+      "stats"
+    ]
+  },
+  {
+    "name": "Dictionary",
+    "mode": "public",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "examples",
+      "search",
+      "synonyms"
+    ]
+  },
+  {
+    "name": "DuckDuckGo",
+    "mode": "public",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "search",
+      "suggest"
+    ]
+  },
+  {
+    "name": "flomo",
+    "mode": "browser",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "memos"
+    ]
+  },
+  {
+    "name": "GeoGebra",
+    "mode": "browser",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "add-circle",
+      "add-line",
+      "add-point",
+      "add-polygon",
+      "eval",
+      "hexagon",
+      "info",
+      "list",
+      "triangle"
+    ]
+  },
+  {
+    "name": "Gmail",
+    "mode": "browser",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "attachments",
+      "drafts",
+      "important",
+      "inbox",
+      "labels",
+      "search",
+      "sent",
+      "snoozed",
+      "spam",
+      "starred",
+      "thread",
+      "trash",
+      "unread"
+    ]
+  },
+  {
+    "name": "Google",
+    "mode": "public",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "images",
+      "news",
+      "search",
+      "suggest",
+      "trends"
+    ]
+  },
+  {
+    "name": "Gov Law",
+    "mode": "browser",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "recent",
+      "search"
+    ]
+  },
+  {
+    "name": "Gov Policy",
+    "mode": "browser",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "recent",
+      "search"
+    ]
+  },
+  {
+    "name": "IMDb",
+    "mode": "browser",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "person",
+      "reviews",
+      "search",
+      "title",
+      "top",
+      "trending"
+    ]
+  },
+  {
+    "name": "Indeed",
+    "mode": "browser",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "job",
+      "search"
+    ]
+  },
+  {
+    "name": "Internet Archive",
+    "mode": "public",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "item",
+      "search",
+      "snapshots",
+      "wayback"
+    ]
+  },
+  {
+    "name": "Lichess",
+    "mode": "public",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "top",
+      "user"
+    ]
+  },
+  {
+    "name": "LinkedIn Learning",
+    "mode": "browser",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "course",
+      "search",
+      "trending"
+    ]
+  },
+  {
+    "name": "openFDA",
+    "mode": "public",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "drug-label",
+      "food-recall"
+    ]
+  },
+  {
+    "name": "REST Countries",
+    "mode": "public",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "country",
+      "region"
+    ]
+  },
+  {
+    "name": "Reuters",
+    "mode": "browser",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "article-detail",
+      "search"
+    ]
+  },
+  {
+    "name": "Trip.com",
+    "mode": "public",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "attraction",
+      "car",
+      "deals",
+      "flight",
+      "flight-round",
+      "hotel",
+      "hotel-search",
+      "package",
+      "search",
+      "tour",
+      "train",
+      "transfer"
+    ]
+  },
+  {
+    "name": "TVmaze",
+    "mode": "public",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "search",
+      "show"
+    ]
+  },
+  {
+    "name": "Upwork",
+    "mode": "browser",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "detail",
+      "feed",
+      "search"
+    ]
+  },
+  {
+    "name": "Web (any page)",
+    "mode": "browser",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "read"
+    ]
+  },
+  {
+    "name": "wttr.in",
+    "mode": "public",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "current",
+      "forecast"
+    ]
+  },
+  {
+    "name": "Yahoo",
+    "mode": "browser",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "search"
+    ]
+  },
+  {
+    "name": "Z-Library",
+    "mode": "browser",
+    "category": [
+      "utility"
+    ],
+    "commands": [
+      "info",
+      "search"
+    ]
+  }
+]
