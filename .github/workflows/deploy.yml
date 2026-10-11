@@ -38,6 +38,7 @@ jobs:
             docs
             package.json
             package-lock.json
+            cli-manifest.json
 
       - name: Extract opencli version
         id: version
@@ -53,6 +54,9 @@ jobs:
         run: node scripts/fetch-plugin-stars.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Sync platform table from OpenCLI manifest
+        run: node scripts/sync-platforms.mjs _opencli/cli-manifest.json
 
       - name: Build website
         run: npm run build
