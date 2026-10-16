@@ -46,5 +46,17 @@
     "commands": ["wall", "feed", "search"],
     "tags": ["vk", "vkontakte", "social", "russia"],
     "installCommand": "opencli plugin install github:flobo3/opencli-plugin-vk"
+  },
+  {
+    "name": "opencli-plugin-futurelearn",
+    "slug": "futurelearn",
+    "description": "FutureLearn: browse/search the course catalog, dump public syllabi, list steps of enrolled courses, read step content (articles, video transcripts), and check your learning progress.",
+    "author": "dull-bird",
+    "repo": "dull-bird/opencli-plugin-futurelearn",
+    "type": "TS",
+    "category": "utility",
+    "commands": ["courses", "progress", "read", "steps", "toc"],
+    "tags": ["futurelearn", "mooc", "courses", "learning", "education"],
+    "installCommand": "opencli plugin install github:dull-bird/opencli-plugin-futurelearn"
   }
 ]
